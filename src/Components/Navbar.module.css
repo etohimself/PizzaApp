@@ -65,14 +65,14 @@
 
 .NavbarContainerMobile {
   display: none;
-  height: auto;
-  width: 100%;
-  background-color: #4c1108;
-  font-size: 18px;
-  color: white;
-  font-family: "Sura";
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  height:auto;
+  width: 100%;
+  background-color: #4c1108;
+  color: #E8E3D9;
+  font-family: "Sura";
   box-sizing: border-box;
   padding: 15px;
   position: fixed;
@@ -80,9 +80,47 @@
   z-index: 2;
 }
 
-.ShowItem {
-display:flex;
+.NavbarMobileButton, .CartMobileButton {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor:pointer;
 }
+
+.NavbarMobileButton > p, .CartMobileButton > p {
+  font-size:18px;
+  margin:0;
+}
+
+.NavbarMobileButton > i, .CartMobileButton > i {
+  font-size:30px;
+}
+
+.CartMobileButton {
+  position: relative;
+}
+
+.CartCounterMobile {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background-color: red;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+  top: -10px;
+  right: 0;
+  font-family: "Arial";
+  font-size:22px;
+  font-weight: 600;
+}
+
+.ShowItem {
+  display:flex;
+}
+
 
 @media screen and (max-width: 1200px) {
   .NavbarContainer {
@@ -91,6 +129,7 @@ display:flex;
     padding-right: 40px;
     padding-left: 40px;
   }
+
   .BrandLabel {
     font-size: 24px;
   }
@@ -110,34 +149,18 @@ display:flex;
   .NavbarContainer {
     display: none;
   }
-
+  
   .NavbarContainerMobile {
-    display: flex;
+    display:flex;
   }
+}
 
-  .Brand > img {
-    width: 25px;
-    height: 25px;
+@media screen and (max-width: 400px) {
+  .NavbarMobileButton > p, .CartMobileButton > p {
+    font-size:calc(8px + 2vw);
   }
-
-  .BrandLabel {
-    font-size: 20px;
-    padding-left: 5px;
-  }
-
-  .NavbarButton {
-    font-size: 18px;
-    margin-right: 10px;
-  }
-
-  .CartButton {
-    font-size: 22px;
-  }
-
-  .CartCounter {
-    width: 25px;
-    height: 25px;
-    top: -12px;
-    right: 8px;
+  
+  .NavbarMobileButton > i, .CartMobileButton > i {
+    font-size:calc(18px + 2vw);
   }
 }

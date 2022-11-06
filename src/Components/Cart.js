@@ -42,7 +42,7 @@ function Cart(props) {
           cartVisible && styles.CartContainerVisible
         }`}
       >
-        <h1>My Cart</h1>
+        <h1 className={styles.CartTitle}>My Cart</h1>
         <div className={styles.ItemContainer}>
           {cart.map((eachItem, index) => (
             <div className={styles.CartItem} key={index}>

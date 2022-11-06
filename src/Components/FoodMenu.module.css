@@ -1,5 +1,6 @@
 .FoodMenuContainer {
   background-color: #e8e3d9;
+  background-image:url("/public/pizzabg.png");
   overflow:hidden;
   box-sizing: border-box;
   margin-top: 50px;

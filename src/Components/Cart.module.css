@@ -35,6 +35,10 @@
   right: 0;
 }
 
+.CartTitle {
+  margin:0;
+}
+
 .ItemContainer {
   height: 60%;
   border: 1px solid #a78b85;
