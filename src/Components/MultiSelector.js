@@ -9,6 +9,7 @@ function MultiSelector(props) {
         <div
           className={styles.selectionContainer}
           onClick={() => props.changeHandler(index)}
+          key={index}
         >
           <div className={styles.selectionCircle}>
             <div

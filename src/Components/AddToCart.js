@@ -5,6 +5,7 @@ import { AppContext } from "../Contexts/AppContext";
 import MultiSelector from "./MultiSelector.js";
 import RemoveSelector from "./RemoveSelector.js";
 import CheckBoxSelector from "./CheckBoxSelector";
+import Button1 from "./Button1";
 
 function AddToCart() {
   const {
@@ -120,9 +121,9 @@ function AddToCart() {
               onIncrement={handleItemCountIncrement}
               value={itemCount}
             />
-            <div className={styles.AddToCartButton} onClick={handleAddToCart}>
+            <Button1 onClick={handleAddToCart}>
               Add To Cart
-            </div>
+            </Button1>
           </div>
         </div>
       </div>

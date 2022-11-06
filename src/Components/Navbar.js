@@ -3,7 +3,7 @@ import { AppContext } from "../Contexts/AppContext";
 import styles from "./Navbar.module.css";
 
 function Navbar() {
-  const {cart} = useContext(AppContext);
+  const {cart, handleCartShow} = useContext(AppContext);
 
   return (
     <div>
@@ -17,7 +17,7 @@ function Navbar() {
           <div className={styles.NavbarButton}>Home</div>
           <div className={styles.NavbarButton}>Menu</div>
           <div className={styles.NavbarButton}>Check Order</div>
-          <div className={styles.CartButton}>
+          <div className={styles.CartButton} onClick={handleCartShow}>
             <i className="fa-solid fa-cart-shopping"></i>
             <div
               className={`${styles.CartCounter} ${
@@ -36,7 +36,7 @@ function Navbar() {
         </div>
         <div className={styles.NavbarButton}>Menu</div>
         <div className={styles.NavbarButton}>Check Order</div>
-        <div className={styles.CartButton}>
+        <div className={styles.CartButton} onClick={handleCartShow}>
           <i className="fa-solid fa-cart-shopping"></i>
           <div
             className={`${styles.CartCounter} ${cart.length && styles.ShowItem}`}

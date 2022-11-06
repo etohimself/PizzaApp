@@ -9,7 +9,8 @@ export function AppContextProvider(props) {
       id: uuidv4(),
       img: "pizza1.png",
       name: "Sausage Pizza",
-      description: "Classic Italian Pizza with Tomato sauce, sausages and cheese.",
+      description:
+        "Classic Italian Pizza with Tomato sauce, sausages and cheese.",
       price: 12.9,
       productType: 2,
       sizes: ["Small", "Medium", "Large"],
@@ -328,13 +329,12 @@ export function AppContextProvider(props) {
       size: selectedSize,
       removed: removedIngredients,
       extras: selectedExtras,
-      extraPrice: extraPrice, 
+      extraPrice: extraPrice,
       crust: selectedCrust,
     };
     setCart((prevState) => [...prevState, itemToAdd]);
     handleAddToCartClose();
   };
-
 
   const handleSizeSelection = (selectedIndex) => {
     setSelectedSize(selectedIndex);
@@ -356,13 +356,45 @@ export function AppContextProvider(props) {
     }
   };
 
-  const handleCartClose = () =>{
+  const handleCartClose = () => {
     setCartVisible(0);
-  }
+  };
 
   const handleCartShow = () => {
     setCartVisible(1);
-  }
+  };
+
+  const handleIncreaseItemCount = (index) => {
+    setCart((previousCart) => {
+      return previousCart.map((eachItem, currentIndex) => {
+        if (index == currentIndex && eachItem.count < maxItemCount) {
+          return { ...eachItem, count: eachItem.count + 1 };
+        } else {
+          return eachItem;
+        }
+      });
+    });
+  };
+
+  const handleDecreaseItemCount = (index) => {
+    setCart((previousCart) => {
+      let newCart = previousCart.map((eachItem, currentIndex) => {
+        if (index == currentIndex && eachItem.count > 0) {
+          return { ...eachItem, count: eachItem.count - 1 };
+        } else {
+          return eachItem;
+        }
+      });
+      return newCart.filter((eachItem) => eachItem.count > 0); //Filter zero counts, prevent passing null via map()
+    });
+  };
+
+  const handleRemoveItem = (index) => {
+    setCart((previousCart) => {
+      return previousCart.filter((eachItem, currentIndex) => index != currentIndex);
+  });
+}
+
 
 
   return (
@@ -391,7 +423,10 @@ export function AppContextProvider(props) {
         cart,
         cartVisible,
         handleCartClose,
-        handleCartShow
+        handleCartShow,
+        handleIncreaseItemCount,
+        handleDecreaseItemCount,
+        handleRemoveItem
       }}
     >
       {props.children}

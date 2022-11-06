@@ -47,19 +47,6 @@
   color: #4c1108;
 }
 
-.AddToCartButton {
-  background-color: #4c1108;
-  color: #e8e3d9;
-  font-size: 24px;
-  font-family: sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-left: 20px;
-}
 
 .ActionButtonsContainer {
   display: flex;
@@ -195,14 +182,6 @@
     justify-content: space-between;
     width: 100%;
     padding: 0;
-  }
-
-  .AddToCartButton {
-    font-size: calc(10px + 2vw);
-    padding: 0;
-    height: 100%;
-    width: 50%;
-    margin-left: 20px;
   }
 }
 

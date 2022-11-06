@@ -60,6 +60,7 @@
     width: 80vw;
     height: auto;
     min-height:40vw;
+    margin: 18px;
   }
 
   .ProductName {
@@ -68,6 +69,7 @@
 
   .ProductDescription {
     font-size:4.75vw;
+    
   }
   
   .ProductPrice {
@@ -75,8 +77,8 @@
   }
 
   .ProductItemOuterContainer > img {
-    width:40vw;
-    height:40vw;
+    width:calc(30px + 32vw);
+    height:calc(30px + 32vw);
   }
 
   .ProductDescription {

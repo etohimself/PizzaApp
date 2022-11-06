@@ -1,29 +1,35 @@
 .CountSelectorContainer {
-  background-color: none;
   border: 1px solid #9d7e79;
   border-radius: 5px;
-  font-size: 20px;
   font-family: sans-serif;
   color: #4c1108;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  width:100px;
+  justify-content: center;
+  padding: 0px calc(10px + 0.1vw);
 }
 
 .CurrentCountLabel {
-  font-size: 30px;
+  font-size: calc(30px + 0.3vw);  /*Current Number */
   font-weight: 800;
+  margin: 0px calc(10px + 0.3vw);
 }
 
 .CountSelectorContainer > i {
+  font-size: calc(20px + 0.3vw); /* Icon Size */
   cursor: pointer;
 }
 
-@media screen and (max-width: 750px) {
+
+.CountSelectorContainer.small {
 
 }
 
-@media screen and (max-width: 420px) {
+.CountSelectorContainer.small .CurrentCountLabel {
+  font-size: calc(24px + 0.3vw);
+  margin: 0px calc(10px + 0.3vw);
+}
 
+.CountSelectorContainer.small > i  {
+  font-size: calc(18px + 0.3vw); /* Icon Size */
 }
