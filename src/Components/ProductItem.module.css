@@ -1,0 +1,86 @@
+.ProductItemOuterContainer {
+  cursor: pointer;
+}
+
+.ProductItemOuterContainer > img {
+  width: 150px;
+  height: 150px;
+  margin: 0;
+  position: absolute;
+}
+
+.ProductItemInnerContainer {
+  width: 300px;
+  height: auto;
+  min-height: 140px;
+  background-color: #a62a0e;
+  color: white;
+  border-radius: 15px;
+  margin: 25px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding-left: 40%;
+}
+
+.ProductItemInnerContainer.isDrink {
+  padding-left: 30%;
+  padding-top: 3%;
+}
+
+.ProductName {
+  font-size: 22px;
+  font-weight: 600;
+  font-family: "Sura";
+}
+
+.ProductDescription {
+  width: 150px;
+}
+
+.ProductPrice {
+  font-size: 22px;
+  font-weight: 600;
+  font-family: "Sura";
+  color: #f9d11f;
+}
+
+.ProductItemContainer.isDrink > img {
+  left: -20px;
+  top: -20px;
+}
+
+.ProductItemContainer.isDeal > img {
+  border-radius: 0;
+}
+
+
+@media screen and (max-width:500px) {
+  .ProductItemInnerContainer {
+    width: 80vw;
+    height: auto;
+    min-height:40vw;
+  }
+
+  .ProductName {
+    font-size:6vw; 
+  }
+
+  .ProductDescription {
+    font-size:4.75vw;
+  }
+  
+  .ProductPrice {
+    font-size:6vw;
+  }
+
+  .ProductItemOuterContainer > img {
+    width:40vw;
+    height:40vw;
+  }
+
+  .ProductDescription {
+    width: 100%;
+  }
+  
+}

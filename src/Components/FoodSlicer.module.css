@@ -1,0 +1,13 @@
+.FoodSlicerContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+@media screen and (max-width:500px) {
+  .FoodSlicerContainer {
+    margin-top: 0;
+  }
+}

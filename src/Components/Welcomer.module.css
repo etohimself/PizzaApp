@@ -1,0 +1,68 @@
+.WelcomerContainer {
+  width: 100%;
+  height: auto;
+  background: none;
+  padding-left: 100px;
+  padding-right: 100px;
+  color: white;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+
+.WelcomerTextArea {
+  flex-basis: auto;
+  flex-shrink: 0;
+}
+
+.WelcomerTextArea > h1 {
+  font-size: 6vw;
+  margin: 0;
+}
+
+.WelcomerTextArea > h2 {
+  font-size: 3vw;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+}
+
+.WelcomerTextArea > h3 {
+  font-size: 1.2vw;
+  font-weight: 200;
+}
+
+.WelcomerImageArea {
+  flex-shrink: 1;
+}
+
+.WelcomerImageArea > img {
+  min-width: 100%;
+  min-height: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+  .WelcomerContainer {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+
+  .WelcomerTextArea > h1 {
+    font-size: 7vw;
+  }
+
+  .WelcomerTextArea > h2 {
+    font-size: 4vw;
+  }
+
+  .WelcomerTextArea > h3 {
+    font-size: 1.8vw;
+  }
+}
+
+@media screen and (max-width:500px) {
+  .WelcomerTextArea {
+    display:none;
+  }
+}

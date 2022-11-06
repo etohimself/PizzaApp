@@ -1,0 +1,29 @@
+.CountSelectorContainer {
+  background-color: none;
+  border: 1px solid #9d7e79;
+  border-radius: 5px;
+  font-size: 20px;
+  font-family: sans-serif;
+  color: #4c1108;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width:100px;
+}
+
+.CurrentCountLabel {
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.CountSelectorContainer > i {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 750px) {
+
+}
+
+@media screen and (max-width: 420px) {
+
+}

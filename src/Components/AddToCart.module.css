@@ -1,0 +1,240 @@
+.AddToCartOverlay {
+  position: fixed;
+  top: 0;
+  height: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.25);
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.AddToCartOverlay.isVisible {
+  display: flex;
+}
+
+.AddToCartContainer {
+  background-color: #e8e3d9;
+  width: 60%;
+  height: 80%;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 2%;
+}
+
+.InfoContainer {
+  height:87%;
+  width: 100%;
+  border: 1px solid #c7c7c7;
+  display: flex;
+}
+
+.ActionContainer {
+  height:13%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.PriceLabel {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 800;
+  font-family: sans-serif;
+  color: #4c1108;
+}
+
+.AddToCartButton {
+  background-color: #4c1108;
+  color: #e8e3d9;
+  font-size: 24px;
+  font-family: sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.ActionButtonsContainer {
+  display: flex;
+}
+
+.DescriptionContainer {
+  box-sizing: border-box;
+  padding: 2%;
+  border-right: 1px solid #c7c7c7;
+  overflow: hidden;
+  width:40%;
+}
+
+.DescriptionContainer > img {
+  width: 100%;
+  height: 40%;
+  object-fit: contain;
+  background: rgb(218, 212, 200);
+  background: radial-gradient(
+    circle,
+    rgba(218, 212, 200, 1) 0%,
+    rgba(157, 126, 121, 1) 100%
+  );
+  border-radius: 5px;
+}
+
+.DescriptionTextArea > h1 {
+  margin: 0;
+  color: #4c1108;
+  font-size: 32px;
+  font-family: "Sura";
+  font-weight: 700;
+}
+
+.DescriptionTextArea > p {
+  margin: 0;
+  color: #4c1108;
+  font-size: 24px;
+  font-family: "Andada Pro";
+  font-weight: 400;
+}
+
+.PreferenceContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 3%;
+  overflow-y: scroll;
+  width:60%;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #c7c7c7;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #939393;
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #707070;
+}
+
+@media screen and (max-width: 1200px) {
+  .AddToCartContainer {
+    width: 85%;
+    min-width: 0;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .AddToCartContainer {
+    width: 88%;
+    height: 80%;
+    margin-top: -15%;
+  }
+
+  .InfoContainer {
+    flex-direction: column;
+    height: 82%;
+    overflow: hidden;
+  }
+
+  .ActionContainer {
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 18%;
+  }
+
+  .DescriptionContainer {
+    display: flex;
+    justify-content: space-between;
+    height: 50%;
+    width:100%;
+  }
+
+  .DescriptionContainer > img {
+    width: 48%;
+    height: 100%;
+  }
+
+  .DescriptionTextArea {
+    width: 48%;
+  }
+
+  .DescriptionTextArea > h1 {
+    font-size: calc(20px + 1vw);
+  }
+
+  .DescriptionTextArea > p {
+    font-size: calc(14px + 1vw);
+  }
+
+  .PreferenceContainer {
+    border-top: 1px solid #c7c7c7;
+    height: 60%;
+    width:100%;
+  }
+
+  .PriceLabel {
+    align-self: flex-start;
+  }
+
+  .ActionButtonsContainer {
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
+  }
+
+  .AddToCartButton {
+    font-size: calc(10px + 2vw);
+    padding: 0;
+    height: 100%;
+    width: 50%;
+    margin-left: 20px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+   .PriceLabel {
+    font-size:calc(20px + 4vw);
+  }
+  
+  .DescriptionContainer {
+    display: block;
+  }
+
+  .DescriptionTextArea {
+    width: 100%;
+    height:50%;
+  }
+
+  .DescriptionContainer > img {
+    width: 100%;
+    height: 50%;
+  }
+
+  .DescriptionTextArea > h1 {
+    font-size: 28px;
+  }
+
+  .DescriptionTextArea > p {
+    font-size: 18px;
+  }
+
+  .PreferenceContainer {
+    border-top: 1px solid #c7c7c7;
+    height: 55%;
+  }
+}
