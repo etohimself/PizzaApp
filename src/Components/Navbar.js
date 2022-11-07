@@ -31,19 +31,19 @@ function Navbar() {
       </div>
       <div className={styles.NavbarContainerMobile}>
         <div className={styles.NavbarMobileButton}>
-          <i class="fas fa-home"></i>
+          <i className="fas fa-home"></i>
           <p>Home</p>
         </div>
         <div className={styles.NavbarMobileButton}>
-          <i class="fas fa-list"></i>
+          <i className="fas fa-list"></i>
           <p>Menu</p>
         </div>
         <div className={styles.NavbarMobileButton}>
-          <i class="fa fa-search-location"></i>
+          <i className="fa fa-search-location"></i>
           <p>My Order</p>
         </div>
         <div className={styles.CartMobileButton} onClick={handleCartShow}>
-          <i class="fa-solid fa-cart-shopping"></i>
+          <i className="fa-solid fa-cart-shopping"></i>
           <div className={`${styles.CartCounterMobile} ${ cart.length > 0 && styles.ShowItem}`}>{cart.length}</div>
           <p>My Cart</p>
         </div>

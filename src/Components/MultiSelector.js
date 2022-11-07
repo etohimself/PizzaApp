@@ -18,7 +18,7 @@ function MultiSelector(props) {
               }`}
             ></div>
           </div>
-          {eachItem}
+          {eachItem.name}
         </div>
       ))}
     </div>

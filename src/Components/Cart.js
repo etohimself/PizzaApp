@@ -15,17 +15,36 @@ function Cart(props) {
     handleRemoveItem,
   } = useContext(AppContext);
 
-  const itemPrices = cart.map((eachItem) => {
-    return (
-      (eachItem.price + eachItem.extras.length * eachItem.extraPrice) *
-      eachItem.count
-    );
-  });
+  const itemPrices =
+    cart.length > 0 &&
+    cart.map((eachItem) => {
+      let basePrice = eachItem.price;
+      let sizePrice =
+        eachItem.hasOwnProperty("sizes") &&
+        eachItem.sizes.length &&
+        eachItem.sizes[eachItem.selectedSize].extraPrice;
+      let crustPrice =
+        eachItem.hasOwnProperty("crusts") &&
+        eachItem.crusts.length &&
+        eachItem.crusts[eachItem.selectedCrust].extraPrice;
+      let extrasPrice =
+        eachItem.hasOwnProperty("extras") &&
+        eachItem.extras.length &&
+        eachItem.selectedExtras.length > 0 &&
+        eachItem.selectedExtras.reduce(
+          (previousValue, eachExtraIndex) =>
+            previousValue + eachItem.extras[eachExtraIndex].price,
+          0
+        );
+      let eachItemsTotalPrice =
+        eachItem.itemCount * (basePrice + sizePrice + crustPrice + extrasPrice);
+      return eachItemsTotalPrice;
+    });
 
   const totalPrice =
     cart.length > 0
-      ? itemPrices.reduce((valueSoFar, currentValue) => {
-          return valueSoFar + currentValue;
+      ? itemPrices.reduce((eachItemsTotalPrice, currentValue) => {
+          return eachItemsTotalPrice + currentValue;
         }, 0)
       : 0;
 
@@ -62,7 +81,7 @@ function Cart(props) {
                 </div>
                 <div className={styles.CartItemActionBar}>
                   <CountSelector
-                    value={eachItem.count}
+                    value={eachItem.itemCount}
                     onIncrement={() => handleIncreaseItemCount(index)}
                     onDecrement={() => handleDecreaseItemCount(index)}
                     size="small"

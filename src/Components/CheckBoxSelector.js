@@ -18,7 +18,7 @@ function CheckBoxSelector(props) {
               }`}
             ></i>
           </div>
-          {eachItem}
+          {eachItem.name}
         </div>
       ))}
     </div>

@@ -13,8 +13,16 @@ export function AppContextProvider(props) {
         "Classic Italian Pizza with Tomato sauce, sausages and cheese.",
       price: 12.9,
       productType: 2,
-      sizes: ["Small", "Medium", "Large"],
-      crusts: ["Wheat Thin Crust", "Cheese Burs", "Classic"],
+      sizes: [
+        { name: "Small", extraPrice: 0 },
+        { name: "Medium", extraPrice: 4.75 },
+        { name: "Large", extraPrice: 8.9 },
+      ],
+      crusts: [
+        { name: "Classic", extraPrice: 0 },
+        { name: "Wheat Thin Crust", extraPrice: 0.5 },
+        { name: "Cheese Burs", extraPrice: 2.75 },
+      ],
       ingredients: [
         "Tomatoe",
         "Cheese",
@@ -23,7 +31,11 @@ export function AppContextProvider(props) {
         "Sausage",
         "Onion",
       ],
-      extras: ["Cheese", "Onions", "Sausages"],
+      extras: [
+        { name: "Cheese", price: 0.85 },
+        { name: "Onions", price: 0.5 },
+        { name: "Sausages", price: 1.2 },
+      ],
     },
     {
       id: uuidv4(),
@@ -32,8 +44,16 @@ export function AppContextProvider(props) {
       description: "Cheese, olives, Tomatoes, sauce, classic taste.",
       price: 12.9,
       productType: 2,
-      sizes: ["Small", "Medium", "Large"],
-      crusts: ["Wheat Thin Crust", "Cheese Burs", "Classic"],
+      sizes: [
+        { name: "Small", extraPrice: 0 },
+        { name: "Medium", extraPrice: 4.75 },
+        { name: "Large", extraPrice: 8.9 },
+      ],
+      crusts: [
+        { name: "Classic", extraPrice: 0 },
+        { name: "Wheat Thin Crust", extraPrice: 0.5 },
+        { name: "Cheese Burs", extraPrice: 2.75 },
+      ],
       ingredients: [
         "Tomatoe",
         "Cheese",
@@ -42,7 +62,11 @@ export function AppContextProvider(props) {
         "Sausage",
         "Onion",
       ],
-      extras: ["Cheese", "Onions", "Sausages"],
+      extras: [
+        { name: "Cheese", price: 0.85 },
+        { name: "Onions", price: 0.5 },
+        { name: "Sausages", price: 1.2 },
+      ],
     },
     {
       id: uuidv4(),
@@ -51,8 +75,16 @@ export function AppContextProvider(props) {
       description: "Two slices of Pizza house’s selection.",
       price: 16.9,
       productType: 1,
-      sizes: ["Small", "Medium", "Large"],
-      crusts: ["Wheat Thin Crust", "Cheese Burs", "Classic"],
+      sizes: [
+        { name: "Small", extraPrice: 0 },
+        { name: "Medium", extraPrice: 4.75 },
+        { name: "Large", extraPrice: 8.9 },
+      ],
+      crusts: [
+        { name: "Classic", extraPrice: 0 },
+        { name: "Wheat Thin Crust", extraPrice: 0.5 },
+        { name: "Cheese Burs", extraPrice: 2.75 },
+      ],
       ingredients: [
         "Tomatoe",
         "Cheese",
@@ -61,7 +93,11 @@ export function AppContextProvider(props) {
         "Sausage",
         "Onion",
       ],
-      extras: ["Cheese", "Onions", "Sausages"],
+      extras: [
+        { name: "Cheese", price: 0.85 },
+        { name: "Onions", price: 0.5 },
+        { name: "Sausages", price: 1.2 },
+      ],
     },
     {
       id: uuidv4(),
@@ -70,8 +106,16 @@ export function AppContextProvider(props) {
       description: "Classic Italian Pizza with Tomato sauce and cheese.",
       price: 12.9,
       productType: 2,
-      sizes: ["Small", "Medium", "Large"],
-      crusts: ["Wheat Thin Crust", "Cheese Burs", "Classic"],
+      sizes: [
+        { name: "Small", extraPrice: 0 },
+        { name: "Medium", extraPrice: 4.75 },
+        { name: "Large", extraPrice: 8.9 },
+      ],
+      crusts: [
+        { name: "Classic", extraPrice: 0 },
+        { name: "Wheat Thin Crust", extraPrice: 0.5 },
+        { name: "Cheese Burs", extraPrice: 2.75 },
+      ],
       ingredients: [
         "Tomatoe",
         "Cheese",
@@ -80,7 +124,11 @@ export function AppContextProvider(props) {
         "Sausage",
         "Onion",
       ],
-      extras: ["Cheese", "Onions", "Sausages"],
+      extras: [
+        { name: "Cheese", price: 0.85 },
+        { name: "Onions", price: 0.5 },
+        { name: "Sausages", price: 1.2 },
+      ],
     },
     {
       id: uuidv4(),
@@ -89,8 +137,16 @@ export function AppContextProvider(props) {
       description: "Classic Italian Pizza with Tomato sauce and cheese.",
       price: 16.9,
       productType: 1,
-      sizes: ["Small", "Medium", "Large"],
-      crusts: ["Wheat Thin Crust", "Cheese Burs", "Classic"],
+      sizes: [
+        { name: "Small", extraPrice: 0 },
+        { name: "Medium", extraPrice: 4.75 },
+        { name: "Large", extraPrice: 8.9 },
+      ],
+      crusts: [
+        { name: "Classic", extraPrice: 0 },
+        { name: "Wheat Thin Crust", extraPrice: 0.5 },
+        { name: "Cheese Burs", extraPrice: 2.75 },
+      ],
       ingredients: [
         "Tomatoe",
         "Cheese",
@@ -99,7 +155,11 @@ export function AppContextProvider(props) {
         "Sausage",
         "Onion",
       ],
-      extras: ["Cheese", "Onions", "Sausages"],
+      extras: [
+        { name: "Cheese", price: 0.85 },
+        { name: "Onions", price: 0.5 },
+        { name: "Sausages", price: 1.2 },
+      ],
     },
     {
       id: uuidv4(),
@@ -108,8 +168,16 @@ export function AppContextProvider(props) {
       description: "Classic Italian Pizza with Tomato sauce and cheese.",
       price: 12.9,
       productType: 2,
-      sizes: ["Small", "Medium", "Large"],
-      crusts: ["Wheat Thin Crust", "Cheese Burs", "Classic"],
+      sizes: [
+        { name: "Small", extraPrice: 0 },
+        { name: "Medium", extraPrice: 4.75 },
+        { name: "Large", extraPrice: 8.9 },
+      ],
+      crusts: [
+        { name: "Classic", extraPrice: 0 },
+        { name: "Wheat Thin Crust", extraPrice: 0.5 },
+        { name: "Cheese Burs", extraPrice: 2.75 },
+      ],
       ingredients: [
         "Tomatoe",
         "Cheese",
@@ -118,7 +186,11 @@ export function AppContextProvider(props) {
         "Sausage",
         "Onion",
       ],
-      extras: ["Cheese", "Onions", "Sausages"],
+      extras: [
+        { name: "Cheese", price: 0.85 },
+        { name: "Onions", price: 0.5 },
+        { name: "Sausages", price: 1.2 },
+      ],
     },
     {
       id: uuidv4(),
@@ -127,8 +199,16 @@ export function AppContextProvider(props) {
       description: "Classic Italian Pizza with Tomato sauce and cheese.",
       price: 12.9,
       productType: 2,
-      sizes: ["Small", "Medium", "Large"],
-      crusts: ["Wheat Thin Crust", "Cheese Burs", "Classic"],
+      sizes: [
+        { name: "Small", extraPrice: 0 },
+        { name: "Medium", extraPrice: 4.75 },
+        { name: "Large", extraPrice: 8.9 },
+      ],
+      crusts: [
+        { name: "Classic", extraPrice: 0 },
+        { name: "Wheat Thin Crust", extraPrice: 0.5 },
+        { name: "Cheese Burs", extraPrice: 2.75 },
+      ],
       ingredients: [
         "Tomatoe",
         "Cheese",
@@ -137,7 +217,11 @@ export function AppContextProvider(props) {
         "Sausage",
         "Onion",
       ],
-      extras: ["Cheese", "Onions", "Sausages"],
+      extras: [
+        { name: "Cheese", price: 0.85 },
+        { name: "Onions", price: 0.5 },
+        { name: "Sausages", price: 1.2 },
+      ],
     },
     {
       id: uuidv4(),
@@ -146,8 +230,16 @@ export function AppContextProvider(props) {
       description: "Classic Italian Pizza with Tomato sauce and cheese.",
       price: 16.9,
       productType: 1,
-      sizes: ["Small", "Medium", "Large"],
-      crusts: ["Wheat Thin Crust", "Cheese Burs", "Classic"],
+      sizes: [
+        { name: "Small", extraPrice: 0 },
+        { name: "Medium", extraPrice: 4.75 },
+        { name: "Large", extraPrice: 8.9 },
+      ],
+      crusts: [
+        { name: "Classic", extraPrice: 0 },
+        { name: "Wheat Thin Crust", extraPrice: 0.5 },
+        { name: "Cheese Burs", extraPrice: 2.75 },
+      ],
       ingredients: [
         "Tomatoe",
         "Cheese",
@@ -156,7 +248,11 @@ export function AppContextProvider(props) {
         "Sausage",
         "Onion",
       ],
-      extras: ["Cheese", "Onions", "Sausages"],
+      extras: [
+        { name: "Cheese", price: 0.85 },
+        { name: "Onions", price: 0.5 },
+        { name: "Sausages", price: 1.2 },
+      ],
     },
     {
       id: uuidv4(),
@@ -165,8 +261,16 @@ export function AppContextProvider(props) {
       description: "Classic Italian Pizza with Tomato sauce and cheese.",
       price: 12.9,
       productType: 2,
-      sizes: ["Small", "Medium", "Large"],
-      crusts: ["Wheat Thin Crust", "Cheese Burs", "Classic"],
+      sizes: [
+        { name: "Small", extraPrice: 0 },
+        { name: "Medium", extraPrice: 4.75 },
+        { name: "Large", extraPrice: 8.9 },
+      ],
+      crusts: [
+        { name: "Classic", extraPrice: 0 },
+        { name: "Wheat Thin Crust", extraPrice: 0.5 },
+        { name: "Cheese Burs", extraPrice: 2.75 },
+      ],
       ingredients: [
         "Tomatoe",
         "Cheese",
@@ -175,43 +279,63 @@ export function AppContextProvider(props) {
         "Sausage",
         "Onion",
       ],
-      extras: ["Cheese", "Onions", "Sausages"],
+      extras: [
+        { name: "Cheese", price: 0.85 },
+        { name: "Onions", price: 0.5 },
+        { name: "Sausages", price: 1.2 },
+      ],
     },
     {
       id: uuidv4(),
       img: "cocacola.png",
       name: "CocaCola",
-      description: "30cc coca cola.",
+      description: "220ml coca cola.",
       price: 2.9,
       productType: 4,
-      sizes: ["20cc", "30cc", "50cc"],
+      sizes: [
+        { name: "220ml", extraPrice: 0 },
+        { name: "330ml", extraPrice: 1.2 },
+        { name: "1LT", extraPrice: 5.75 },
+      ],
     },
     {
       id: uuidv4(),
       img: "fanta.png",
       name: "Fanta",
-      description: "30cc fanta.",
+      description: "220ml fanta.",
       price: 2.9,
       productType: 4,
-      sizes: ["20cc", "30cc", "50cc"],
+      sizes: [
+        { name: "220ml", extraPrice: 0 },
+        { name: "330ml", extraPrice: 1.2 },
+        { name: "1LT", extraPrice: 5.75 },
+      ],
     },
     {
       id: uuidv4(),
       img: "pepsi.png",
       name: "Pepsi",
-      description: "30cc pepsi.",
+      description: "220ml pepsi.",
       price: 2.9,
       productType: 4,
-      sizes: ["20cc", "30cc", "50cc"],
+      sizes: [
+        { name: "220ml", extraPrice: 0 },
+        { name: "330ml", extraPrice: 1.2 },
+        { name: "1LT", extraPrice: 5.75 },
+      ],
     },
     {
       id: uuidv4(),
       img: "sprite.png",
       name: "Sprite",
-      description: "30cc sprite",
+      description: "220ml sprite",
       price: 2.9,
       productType: 4,
-      sizes: ["20cc", "30cc", "50cc"],
+      sizes: [
+        { name: "220ml", extraPrice: 0 },
+        { name: "330ml", extraPrice: 1.2 },
+        { name: "1LT", extraPrice: 5.75 },
+      ],
     },
     {
       id: uuidv4(),
@@ -220,7 +344,11 @@ export function AppContextProvider(props) {
       description: "2x Large Mixed Pizzas, 1x Coca Cola 1Lt",
       price: 32.49,
       productType: 3,
-      crusts: ["Wheat Thin Crust", "Cheese Burs", "Classic"],
+      crusts: [
+        { name: "Classic", extraPrice: 0 },
+        { name: "Wheat Thin Crust", extraPrice: 0.5 },
+        { name: "Cheese Burs", extraPrice: 2.75 },
+      ],
       ingredients: [
         "Tomatoe",
         "Cheese",
@@ -229,7 +357,11 @@ export function AppContextProvider(props) {
         "Sausage",
         "Onion",
       ],
-      extras: ["Cheese", "Onions", "Sausages"],
+      extras: [
+        { name: "Cheese", price: 0.85 },
+        { name: "Onions", price: 0.5 },
+        { name: "Sausages", price: 1.2 },
+      ],
     },
     {
       id: uuidv4(),
@@ -238,7 +370,11 @@ export function AppContextProvider(props) {
       description: "3x Large Gamer Pizzas, 1.5Lt CocaCola",
       price: 32.49,
       productType: 3,
-      crusts: ["Wheat Thin Crust", "Cheese Burs", "Classic"],
+      crusts: [
+        { name: "Classic", extraPrice: 0 },
+        { name: "Wheat Thin Crust", extraPrice: 0.5 },
+        { name: "Cheese Burs", extraPrice: 2.75 },
+      ],
       ingredients: [
         "Tomatoe",
         "Cheese",
@@ -247,7 +383,11 @@ export function AppContextProvider(props) {
         "Sausage",
         "Onion",
       ],
-      extras: ["Cheese", "Onions", "Sausages"],
+      extras: [
+        { name: "Cheese", price: 0.85 },
+        { name: "Onions", price: 0.5 },
+        { name: "Sausages", price: 1.2 },
+      ],
     },
     {
       id: uuidv4(),
@@ -256,7 +396,11 @@ export function AppContextProvider(props) {
       description: "2x Large Mixed Pizzas, 1Lt Sprite",
       price: 42.8,
       productType: 3,
-      crusts: ["Wheat Thin Crust", "Cheese Burs", "Classic"],
+      crusts: [
+        { name: "Classic", extraPrice: 0 },
+        { name: "Wheat Thin Crust", extraPrice: 0.5 },
+        { name: "Cheese Burs", extraPrice: 2.75 },
+      ],
       ingredients: [
         "Tomatoe",
         "Cheese",
@@ -265,7 +409,11 @@ export function AppContextProvider(props) {
         "Sausage",
         "Onion",
       ],
-      extras: ["Cheese", "Onions", "Sausages"],
+      extras: [
+        { name: "Cheese", price: 0.85 },
+        { name: "Onions", price: 0.5 },
+        { name: "Sausages", price: 1.2 },
+      ],
     },
   ]);
 
@@ -279,7 +427,6 @@ export function AppContextProvider(props) {
   const [selectedCrust, setSelectedCrust] = useState(0);
   const [removedIngredients, setRemovedIngredients] = useState([]);
   const [selectedExtras, setSelectedExtras] = useState([]);
-  const [extraPrice, setExtraPrice] = useState(0.89);
   const [cartVisible, setCartVisible] = useState(0);
 
   //=================================================== FUNCTIONS =================================================================
@@ -325,12 +472,11 @@ export function AppContextProvider(props) {
   const handleAddToCart = () => {
     let itemToAdd = {
       ...selectedItem,
-      count: itemCount,
-      size: selectedSize,
-      removed: removedIngredients,
-      extras: selectedExtras,
-      extraPrice: extraPrice,
-      crust: selectedCrust,
+      itemCount,
+      selectedSize,
+      removedIngredients,
+      selectedExtras,
+      selectedCrust,
     };
     setCart((prevState) => [...prevState, itemToAdd]);
     handleAddToCartClose();
@@ -349,6 +495,7 @@ export function AppContextProvider(props) {
   };
 
   const handleExtraSelection = (selectedIndex) => {
+    //Adding the index only
     if (selectedExtras.includes(selectedIndex)) {
       setSelectedExtras([...selectedExtras].filter((x) => x != selectedIndex));
     } else {
@@ -367,8 +514,8 @@ export function AppContextProvider(props) {
   const handleIncreaseItemCount = (index) => {
     setCart((previousCart) => {
       return previousCart.map((eachItem, currentIndex) => {
-        if (index == currentIndex && eachItem.count < maxItemCount) {
-          return { ...eachItem, count: eachItem.count + 1 };
+        if (index == currentIndex && eachItem.itemCount < maxItemCount) {
+          return { ...eachItem, itemCount: eachItem.itemCount + 1 };
         } else {
           return eachItem;
         }
@@ -379,23 +526,23 @@ export function AppContextProvider(props) {
   const handleDecreaseItemCount = (index) => {
     setCart((previousCart) => {
       let newCart = previousCart.map((eachItem, currentIndex) => {
-        if (index == currentIndex && eachItem.count > 0) {
-          return { ...eachItem, count: eachItem.count - 1 };
+        if (index == currentIndex && eachItem.itemCount > 0) {
+          return { ...eachItem, itemCount: eachItem.itemCount - 1 };
         } else {
           return eachItem;
         }
       });
-      return newCart.filter((eachItem) => eachItem.count > 0); //Filter zero counts, prevent passing null via map()
+      return newCart.filter((eachItem) => eachItem.itemCount > 0); //Filter zero counts, prevent passing null via map()
     });
   };
 
   const handleRemoveItem = (index) => {
     setCart((previousCart) => {
-      return previousCart.filter((eachItem, currentIndex) => index != currentIndex);
-  });
-}
-
-
+      return previousCart.filter(
+        (eachItem, currentIndex) => index != currentIndex
+      );
+    });
+  };
 
   return (
     <AppContext.Provider
@@ -419,14 +566,13 @@ export function AppContextProvider(props) {
         handleRemoveIngredient,
         handleExtraSelection,
         selectedExtras,
-        extraPrice,
         cart,
         cartVisible,
         handleCartClose,
         handleCartShow,
         handleIncreaseItemCount,
         handleDecreaseItemCount,
-        handleRemoveItem
+        handleRemoveItem,
       }}
     >
       {props.children}

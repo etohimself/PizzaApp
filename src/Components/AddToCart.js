@@ -6,6 +6,7 @@ import MultiSelector from "./MultiSelector.js";
 import RemoveSelector from "./RemoveSelector.js";
 import CheckBoxSelector from "./CheckBoxSelector";
 import Button1 from "./Button1";
+import priceFormat from "../Helpers/priceFormat";
 
 function AddToCart() {
   const {
@@ -24,15 +25,32 @@ function AddToCart() {
     handleRemoveIngredient,
     handleExtraSelection,
     selectedExtras,
-    extraPrice,
   } = useContext(AppContext);
-  const priceText = (
-    (selectedItem.price + selectedExtras.length * extraPrice) *
-    itemCount
-  ).toLocaleString("en-US", {
-    minimumFractionDigits: 2,
-    useGrouping: false,
-  });
+
+  const basePrice = selectedItem.price;
+
+  const sizePrice =
+    selectedItem.hasOwnProperty("sizes") &&
+    selectedItem.sizes.length &&
+    selectedItem.sizes[selectedSize].extraPrice;
+    
+  const crustPrice =
+    selectedItem.hasOwnProperty("crusts") &&
+    selectedItem.crusts.length &&
+    selectedItem.crusts[selectedCrust].extraPrice;
+
+  const extrasPrice =
+    selectedItem.hasOwnProperty("extras") &&
+    selectedItem.extras.length &&
+    selectedExtras.length > 0 &&
+    selectedExtras.reduce(
+      (previousValue, eachExtraIndex) =>
+        previousValue + selectedItem.extras[eachExtraIndex].price,
+      0
+    );
+
+  const totalPrice = itemCount * (basePrice + sizePrice + crustPrice + extrasPrice);
+  const priceText = priceFormat(totalPrice);
 
   const escFunction = useCallback((event) => {
     //Lets memorize the escFunction to improve performance
@@ -121,9 +139,7 @@ function AddToCart() {
               onIncrement={handleItemCountIncrement}
               value={itemCount}
             />
-            <Button1 onClick={handleAddToCart}>
-              Add To Cart
-            </Button1>
+            <Button1 onClick={handleAddToCart}>Add To Cart</Button1>
           </div>
         </div>
       </div>
