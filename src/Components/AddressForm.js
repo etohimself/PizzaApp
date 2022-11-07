@@ -15,7 +15,7 @@ const AddressForm = ({ placesKey, inputId, setAddress, required }) => {
   //functionally clear all state
   const clear = (e) => {
     if (e) e.preventDefault();
-    setInput("");
+    //setInput("");
     setAddressName("");
     setStreet("");
     setCity("");
@@ -36,6 +36,7 @@ const AddressForm = ({ placesKey, inputId, setAddress, required }) => {
         const place = window[inputId].getPlace();
         clear();
         setFormattedAddress(place.formatted_address);
+        setInput(place.formatted_address);
         for (const component of place.address_components) {
           const type = component.types[0];
           switch (type) {
