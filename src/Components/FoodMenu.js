@@ -9,7 +9,6 @@ function FoodMenu() {
       <h1>Pizza House’s Menu</h1>
       <FoodSlicer />
       <ProductList />
-      <AddToCart />
     </div>
   );
 }

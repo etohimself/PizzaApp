@@ -1,0 +1,46 @@
+.AddressContainer {
+    width:100%;
+    box-sizing: border-box;
+    display:flex;
+    flex-direction:column;
+}
+
+.AddressContainer > h1 {
+    margin:0 0 15px 0;
+    font-size:30px;
+}
+
+.inputAreaContainer {
+    width:100%;
+    display:flex;
+    margin-bottom:10px;
+}
+
+.inputArea {
+    width:100%;
+    margin-right:10px;
+}
+
+.inputArea>input {
+    width:100%;
+    height:35px;
+    background-color: #DAD4C8;
+    border:0.5px solid #9D7E79;
+    border-radius: 5px;
+    color:#9D7E79;
+    font-size:18px;
+    font-family: "Andada Pro";
+    box-sizing: border-box;
+    padding-left:10px;
+}
+
+.inputArea>input:focus{
+    outline: 2px solid #9D7E79;
+}
+
+.inputArea>p {
+    margin:0;
+    font-size:20px;
+    font-family: "Andada Pro";
+    margin-bottom:8px;
+}

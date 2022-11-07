@@ -4,18 +4,23 @@ import Welcomer from "./Components/Welcomer";
 import FoodMenu from "./Components/FoodMenu";
 import FloatingCart from "./Components/FloatingCart";
 import Cart from "./Components/Cart";
-import { AppContextProvider } from "./Contexts/AppContext.js";
+import { useContext } from "react";
+import { AppContext } from "./Contexts/AppContext";
+import AddToCart from "./Components/AddToCart";
+import CheckOut from "./Components/CheckOut";
 
 function App() {
+  const {isAddToCartVisible} = useContext(AppContext);
+
   return (
     <div className="App">
-      <AppContextProvider>
-        <Navbar />
-        <Welcomer />
-        <FoodMenu />
-        <FloatingCart />
-        <Cart />
-      </AppContextProvider>
+      <Navbar />
+      <Welcomer />
+      <FoodMenu />
+      <FloatingCart />
+      <Cart />
+      {isAddToCartVisible && <AddToCart />}
+      <CheckOut />
     </div>
   );
 }
