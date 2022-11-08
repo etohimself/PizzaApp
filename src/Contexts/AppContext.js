@@ -428,6 +428,21 @@ export function AppContextProvider(props) {
   const [removedIngredients, setRemovedIngredients] = useState([]);
   const [selectedExtras, setSelectedExtras] = useState([]);
   const [cartVisible, setCartVisible] = useState(0);
+  const [recipientFullName, setRecipientFullName] = useState("");
+  const [recipientPhoneNumber, setRecipientPhoneNumber] = useState("");
+  const [recipientAddress, setRecipientAddress] = useState("");
+  const [recipientCountry, setRecipientCountry] = useState("");
+  const [recipientCity, setRecipientCity] = useState("");
+  const [recipientDistrict, setRecipientDistrict] = useState("");
+  const [recipientStreet, setRecipientStreet] = useState("");
+  const [recipientBuildingNumber, setRecipientBuildingNumber] = useState("");
+  const [recipientPostCode, setRecipientPostCode] = useState("");
+  const [creditCardNumber, setCreditCardNumber] = useState("");
+  const [creditCardHolder, setCreditCardHolder] = useState("");
+  const [creditCardExpirationMonth, setCreditCardExpirationMonth] = useState("");
+  const [creditCardExpirationYear, setCreditCardExpirationYear] = useState("");
+  const [creditCardCVV2, setCreditCardCVV2] = useState("");
+  
 
   //=================================================== FUNCTIONS =================================================================
   const filterProducts = (rawDB, filterType) => {
@@ -544,6 +559,23 @@ export function AppContextProvider(props) {
     });
   };
 
+  const handleClearCheckout = () => {
+    setRecipientFullName("");
+    setRecipientPhoneNumber("");
+    setRecipientCountry("");
+    setRecipientCity("");
+    setRecipientDistrict("");
+    setRecipientStreet("");
+    setRecipientBuildingNumber("");
+    setRecipientPostCode("");
+    setRecipientAddress("");
+    setCreditCardNumber("");
+    setCreditCardHolder("");
+    setCreditCardExpirationMonth("");
+    setCreditCardExpirationYear("");
+    setCreditCardCVV2("");
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -573,6 +605,35 @@ export function AppContextProvider(props) {
         handleIncreaseItemCount,
         handleDecreaseItemCount,
         handleRemoveItem,
+        recipientFullName,
+        setRecipientFullName,
+        recipientPhoneNumber,
+        setRecipientPhoneNumber,
+        recipientAddress,
+        setRecipientAddress,
+        recipientCountry,
+        setRecipientCountry,
+        recipientCity,
+        setRecipientCity,
+        recipientDistrict,
+        setRecipientDistrict,
+        recipientStreet,
+        setRecipientStreet,
+        recipientBuildingNumber,
+        setRecipientBuildingNumber,
+        recipientPostCode,
+        setRecipientPostCode,
+        handleClearCheckout,
+        creditCardNumber,
+        setCreditCardNumber,
+        creditCardHolder,
+        setCreditCardHolder,
+        creditCardExpirationMonth,
+        setCreditCardExpirationMonth,
+        creditCardExpirationYear,
+        setCreditCardExpirationYear,
+        creditCardCVV2,
+        setCreditCardCVV2
       }}
     >
       {props.children}
