@@ -12,14 +12,29 @@
 
 .CheckOutContainer {
   background-color: #e8e3d9;
-  width: 60%;
-  height: 80%;
+  width: 50%;
+  height: auto;
+  max-height: 90%;
   border-radius: 5px;
   box-sizing: border-box;
   padding: 2%;
-  display: flex;
   color: #4c1108;
   font-family: "Sura";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.CheckOutContainer > h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.CheckOutContainerInner {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
   overflow-y: auto;
 }
 
@@ -27,16 +42,14 @@
   width: 50%;
   border: 1px solid #c7c7c7;
   box-sizing: border-box;
-  padding: 2% 3%;
+  padding: 1% 2%;
   display: flex;
   flex-direction: column;
 }
 
 .AddressContainer > h1 {
-  margin: 0 0 15px 0;
-  font-size: 24px;
-  white-space: nowrap;
-  overflow: hidden;
+  margin: 0 0 10px 0;
+  font-size: 22px;
 }
 
 .PaymentContainer {
@@ -49,15 +62,15 @@
 }
 
 .PaymentContainer > h1 {
-  margin: 0 0 15px 0;
-  font-size: 24px;
+  margin: 0 0 10px 0;
+  font-size: 22px;
 }
 
 .inputAreaContainer {
   width: 100%;
   display: flex;
   flex-direction: row;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .inputArea {
@@ -69,34 +82,34 @@
 }
 
 .inputArea:nth-child(2) {
-  margin-left: 10px;
+  margin-left: 8px;
 }
 
 .inputArea > input,
 .cardNumberArea > input {
   width: 100%;
-  height: 35px;
+  height: 28px;
   background-color: #dad4c8;
   border: 0.5px solid #9d7e79;
   border-radius: 5px;
   color: #9d7e79;
-  font-size: 18px;
+  font-size: 16px;
   font-family: "Andada Pro";
   box-sizing: border-box;
   padding-left: 10px;
+  margin-bottom: 4px;
 }
 
-.inputArea > input:focus, .cardNumberArea > input:focus {
+.inputArea > input:focus,
+.cardNumberArea > input:focus {
   outline: 2px solid #9d7e79;
 }
 
 .inputArea > p {
   margin: 0;
-  font-size: 18px;
+  font-size: 16px;
   font-family: "Andada Pro";
-  margin-bottom: 8px;
-  overflow: hidden;
-  white-space: nowrap;
+  margin-bottom: 4px;
 }
 
 input.creditCardMonth {
@@ -111,13 +124,21 @@ input.creditCardCVV {
   max-width: 70px;
 }
 
-.clearButton {
-  margin: 30px 0 0 0;
+.orderButton {
+  margin-top: 10px;
   box-sizing: border-box;
-  font-size: 24px;
-  padding: 10px 5px;
-  width: 100%;
-  align-self: flex-end;
+  font-size: 20px;
+  padding: 8px 30px;
+}
+
+.clearButton {
+  margin-top: 10px;
+  box-sizing: border-box;
+  font-size: 20px;
+  padding: 8px 30px;
+  background: none;
+  color: #4c1108;
+  border: 1.5px solid #4c1108;
 }
 
 .cardNumberArea {
@@ -127,9 +148,63 @@ input.creditCardCVV {
 
 .cardIcon {
   width: 70px;
-  height: 35px;
+  height: 30px;
   border-radius: 5px;
   object-fit: contain;
+}
+
+.actionBar {
+  display: flex;
+  align-self: flex-end;
+}
+
+.mapFrame {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  object-fit: cover;
+  border: 1px solid #4c1108;
+  border-radius: 5px;
+}
+
+.termsAndPrice {
+  margin-top: 20px;
+  align-items: flex-start;
+}
+
+.priceTotal {
+  width: 40%;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: -8px;
+  margin-bottom:10px;
+}
+
+.termsAndConditions {
+  width: 60%;
+  padding-left: 18px;
+  box-sizing: border-box;
+  position: relative;
+  font-size: 12px;
+}
+
+.termsCheckBox {
+  position: absolute;
+  top: 3px;
+  left: -2px;
+  width:12px;
+  height:12px;
+  font-size:16px;
+  color:#A7290D;
+}
+
+
+.priceTotal > h1,
+.priceTotal > h2 {
+  margin: 0;
 }
 
 @media screen and (max-width: 1500px) {
@@ -141,7 +216,7 @@ input.creditCardCVV {
     font-size: 18px;
   }
   .CheckOutContainer {
-    width: 80%;
+    width: 65%;
   }
 }
 
@@ -153,9 +228,7 @@ input.creditCardCVV {
 }
 
 @media screen and (max-width: 900px) {
-  .CheckOutContainer {
-    width: 88%;
-    margin-top: -15%;
+  .CheckOutContainerInner {
     flex-direction: column;
   }
 
@@ -168,10 +241,40 @@ input.creditCardCVV {
   }
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 750px) {
+  .CheckOutOverlay {
+    height: 90%;
+  }
+  .CheckOutContainer {
+    width: 90%;
+  }
+  .actionBar {
+    flex-direction: column;
+    width: 100%;
+  }
+  .inputArea > p {
+    font-size: calc(10px + 1vw);
+  }
+}
+
+@media screen and (max-width: 400px) {
   .inputAreaContainer {
     flex-direction: column;
   }
+
+  .CartDatesContainer {
+    flex-direction: row;
+  }
+  .CartDatesContainer > .inputArea:nth-child(1) {
+    width: 70%;
+  }
+  .CartDatesContainer > .inputArea:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 30%;
+  }
+
   .inputArea {
     width: 100%;
     margin-bottom: 5px;
@@ -179,19 +282,40 @@ input.creditCardCVV {
   .inputArea:nth-child(2) {
     margin: 0;
   }
-  .clearButton {
-    margin: 0;
-    font-size: 18px;
+
+  .termsAndPrice {
+    flex-direction: column-reverse;
+  }
+
+  .termsAndConditions {
+    width: 100%;
+  }
+
+  .priceTotal {
+    width: 100%;
   }
 }
 
-.inputArea > input::-webkit-outer-spin-button,
-.inputArea > input::-webkit-inner-spin-button {
+@media screen and (max-width: 260px) {
+  .CartDatesContainer {
+    flex-direction: column;
+  }
+  .CartDatesContainer > .inputArea:nth-child(1) {
+    width: 100%;
+  }
+  .CartDatesContainer > .inputArea:nth-child(2) {
+    display: block;
+    width: 100%;
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
 /* Firefox */
-.inputArea > input[type="number"] {
+input[type="number"] {
   -moz-appearance: textfield;
 }

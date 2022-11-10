@@ -420,6 +420,7 @@ export function AppContextProvider(props) {
   const [cart, setCart] = useState([]);
   const [currentSelection, setCurrentSelection] = useState(2);
   const [isAddToCartVisible, setAddToCartVisible] = useState(0);
+  const [checkoutVisible, setCheckoutVisible] = useState(0);
   const [maxItemCount, setMaxItemCount] = useState(8);
   const [itemCount, setItemCount] = useState(0);
   const [selectedItem, setSelectedItem] = useState({});
@@ -442,6 +443,8 @@ export function AppContextProvider(props) {
   const [creditCardExpirationMonth, setCreditCardExpirationMonth] = useState("");
   const [creditCardExpirationYear, setCreditCardExpirationYear] = useState("");
   const [creditCardCVV2, setCreditCardCVV2] = useState("");
+  const [termsAgreed, setTermsAgreed] = useState(0);
+
   
 
   //=================================================== FUNCTIONS =================================================================
@@ -526,6 +529,15 @@ export function AppContextProvider(props) {
     setCartVisible(1);
   };
 
+  const handleCheckoutClose = () => {
+    setCheckoutVisible(0);
+  };
+
+  const handleCheckoutShow = () => {
+    setCheckoutVisible(1);
+    setCartVisible(0);
+  };
+
   const handleIncreaseItemCount = (index) => {
     setCart((previousCart) => {
       return previousCart.map((eachItem, currentIndex) => {
@@ -574,7 +586,12 @@ export function AppContextProvider(props) {
     setCreditCardExpirationMonth("");
     setCreditCardExpirationYear("");
     setCreditCardCVV2("");
+    setTermsAgreed(0);
   };
+
+  const handleTermsClick = () => {
+    setTermsAgreed((previousValue) => !previousValue);
+  }
 
   return (
     <AppContext.Provider
@@ -633,7 +650,12 @@ export function AppContextProvider(props) {
         creditCardExpirationYear,
         setCreditCardExpirationYear,
         creditCardCVV2,
-        setCreditCardCVV2
+        setCreditCardCVV2,
+        termsAgreed,
+        handleTermsClick,
+        checkoutVisible,
+        handleCheckoutShow,
+        handleCheckoutClose
       }}
     >
       {props.children}

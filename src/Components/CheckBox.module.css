@@ -1,0 +1,17 @@
+.CheckBox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 2px solid #9d7e79;
+  border-radius: 0;
+}
+
+.CheckBox > i {
+  font-size: inherit;
+  display: none;
+}
+
+.CheckBox > i.isVisible {
+  display: block;
+}

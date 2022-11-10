@@ -10,7 +10,7 @@ import AddToCart from "./Components/AddToCart";
 import CheckOut from "./Components/CheckOut";
 
 function App() {
-  const {isAddToCartVisible} = useContext(AppContext);
+  const { isAddToCartVisible, checkoutVisible } = useContext(AppContext);
 
   return (
     <div className="App">
@@ -20,7 +20,7 @@ function App() {
       <FloatingCart />
       <Cart />
       {isAddToCartVisible && <AddToCart />}
-      <CheckOut />
+      {checkoutVisible && <CheckOut />}
     </div>
   );
 }

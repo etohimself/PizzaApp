@@ -41,7 +41,7 @@
 
 .PriceLabel {
   margin: 0;
-  font-size: 36px;
+  font-size: 30px;
   font-weight: 800;
   font-family: sans-serif;
   color: #4c1108;
@@ -126,10 +126,13 @@
 }
 
 @media screen and (max-width: 750px) {
+  .AddToCartOverlay {
+    height:90%;
+  }
+  
   .AddToCartContainer {
     width: 88%;
     height: 80%;
-    margin-top: -15%;
   }
 
   .InfoContainer {
@@ -187,7 +190,7 @@
 
 @media screen and (max-width: 420px) {
    .PriceLabel {
-    font-size:calc(20px + 4vw);
+    font-size:calc(16px + 4vw);
   }
   
   .DescriptionContainer {
