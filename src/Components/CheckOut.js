@@ -327,7 +327,7 @@ function CheckOut() {
               </div>
 
               <div className={`${styles.inputArea}> ${styles.priceTotal}`}>
-                <h1>${totalPrice}</h1>
+                <h1>${priceFormat(totalPrice)}</h1>
                 <h2>Total price</h2>
                 <div>Product: ${priceFormat(totalPrice / 1.18)}</div>
                 <div>Tax : ${priceFormat(totalPrice * 0.18)}</div>
