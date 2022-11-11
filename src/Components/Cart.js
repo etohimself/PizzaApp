@@ -13,7 +13,7 @@ function Cart(props) {
     handleIncreaseItemCount,
     handleDecreaseItemCount,
     handleRemoveItem,
-    handleCheckoutShow
+    handleCheckoutShow,
   } = useContext(AppContext);
 
   const itemPrices =
@@ -49,6 +49,49 @@ function Cart(props) {
         }, 0)
       : 0;
 
+  const itemSmartDescriptions =
+    cart.length > 0 &&
+    cart.map((eachItem) => {
+      let baseStr = `${eachItem.name}`;
+
+      let sizeName =
+        eachItem.hasOwnProperty("sizes") &&
+        eachItem.sizes.length &&
+        eachItem.sizes[eachItem.selectedSize].name;
+
+      let crustName =
+        eachItem.hasOwnProperty("crusts") &&
+        eachItem.crusts.length &&
+        eachItem.crusts[eachItem.selectedCrust].name;
+
+      let extraNames =
+        eachItem.hasOwnProperty("extras") &&
+        eachItem.extras.length &&
+        eachItem.selectedExtras.length > 0 &&
+        eachItem.selectedExtras.reduce(
+          (previousValue, eachExtraIndex) =>
+            `${previousValue}, Extra ${eachItem.extras[eachExtraIndex].name}`,
+          ""
+        );
+
+      let removedNames =
+        eachItem.hasOwnProperty("ingredients") &&
+        eachItem.ingredients.length &&
+        eachItem.removedIngredients.length > 0 &&
+        eachItem.removedIngredients.reduce(
+          (previousValue, eachRemovedIndex) =>
+            `${previousValue}, No ${eachItem.ingredients[eachRemovedIndex]}`,
+          ""
+        );
+
+      baseStr = sizeName ? `${sizeName} ${baseStr}` : baseStr;
+      baseStr = crustName ? `${baseStr}, ${crustName}` : baseStr;
+      baseStr = extraNames ? `${baseStr}${extraNames}` : baseStr;
+      baseStr = removedNames ? `${baseStr}${removedNames}` : baseStr;
+
+      return baseStr;
+    });
+
   return (
     <div>
       <div
@@ -78,7 +121,7 @@ function Cart(props) {
                   ></i>
                 </div>
                 <div className={styles.CartItemDescription}>
-                  No Olives, White Thin Crust etc..
+                  {itemSmartDescriptions[index]}
                 </div>
                 <div className={styles.CartItemActionBar}>
                   <CountSelector
@@ -99,7 +142,12 @@ function Cart(props) {
           <p>Total Price : </p>
           <h2>${priceFormat(totalPrice)}</h2>
         </div>
-        <Button1 className={styles.checkoutButton} onClick={cart.length > 0 && handleCheckoutShow}>Complete Order</Button1>
+        <Button1
+          className={styles.checkoutButton}
+          onClick={cart.length > 0 && handleCheckoutShow}
+        >
+          Complete Order
+        </Button1>
       </div>
     </div>
   );
