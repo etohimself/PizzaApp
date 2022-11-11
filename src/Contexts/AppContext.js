@@ -440,12 +440,13 @@ export function AppContextProvider(props) {
   const [recipientPostCode, setRecipientPostCode] = useState("");
   const [creditCardNumber, setCreditCardNumber] = useState("");
   const [creditCardHolder, setCreditCardHolder] = useState("");
-  const [creditCardExpirationMonth, setCreditCardExpirationMonth] = useState("");
+  const [creditCardExpirationMonth, setCreditCardExpirationMonth] =
+    useState("");
   const [creditCardExpirationYear, setCreditCardExpirationYear] = useState("");
   const [creditCardCVV2, setCreditCardCVV2] = useState("");
   const [termsAgreed, setTermsAgreed] = useState(0);
-
-  
+  const [checkoutError, setCheckoutError] = useState("");
+  const [formErrorList, setFormErrorList] = useState([]);
 
   //=================================================== FUNCTIONS =================================================================
   const filterProducts = (rawDB, filterType) => {
@@ -535,6 +536,8 @@ export function AppContextProvider(props) {
 
   const handleCheckoutShow = () => {
     setCheckoutVisible(1);
+    setCheckoutError("");
+    setFormErrorList([]);
     setCartVisible(0);
   };
 
@@ -587,11 +590,46 @@ export function AppContextProvider(props) {
     setCreditCardExpirationYear("");
     setCreditCardCVV2("");
     setTermsAgreed(0);
+    setFormErrorList([]);
+    setCheckoutError("");
   };
 
   const handleTermsClick = () => {
     setTermsAgreed((previousValue) => !previousValue);
-  }
+    setCheckoutError("");
+  };
+
+  const handleOrderNow = () => {
+    let errorList = [];
+    recipientAddress.length < 4 && errorList.push("checkout-address");
+    recipientCountry.length < 4 && errorList.push("checkout-country");
+    recipientCity.length < 4 && errorList.push("checkout-city");
+    recipientDistrict.length < 4 && errorList.push("checkout-district");
+    recipientStreet.length < 4 && errorList.push("checkout-street");
+    recipientBuildingNumber.length < 4 && errorList.push("checkout-building");
+    recipientPostCode.length < 4 && errorList.push("checkout-postcode");
+    recipientFullName.length < 4 && errorList.push("checkout-name");
+    recipientPhoneNumber.length < 4 && errorList.push("checkout-phone");
+    creditCardHolder < 4 && errorList.push("checkout-cardholder");
+    creditCardNumber.length < 4 && errorList.push("checkout-cardnumber");
+    creditCardExpirationMonth.length < 2 &&
+      errorList.push("checkout-cardmonth");
+    creditCardExpirationYear.length < 4 && errorList.push("checkout-cardyear");
+    creditCardCVV2.length < 3 && errorList.push("checkout-cardcvv");
+    !termsAgreed && errorList.push("checkout-terms");
+
+    console.log(errorList);
+    setFormErrorList([...errorList]);
+
+    errorList.length > 0 &&
+      setCheckoutError(
+        "You must fill out the form correctly and agree to our terms and conditions."
+      );
+    if (errorList.length < 1) {
+      alert("Order succesful!"); //Order Succesful Screen comes here
+      handleCheckoutClose();
+    }
+  };
 
   return (
     <AppContext.Provider
@@ -655,7 +693,10 @@ export function AppContextProvider(props) {
         handleTermsClick,
         checkoutVisible,
         handleCheckoutShow,
-        handleCheckoutClose
+        handleCheckoutClose,
+        handleOrderNow,
+        checkoutError,
+        formErrorList,
       }}
     >
       {props.children}

@@ -99,7 +99,7 @@ function Cart(props) {
           <p>Total Price : </p>
           <h2>${priceFormat(totalPrice)}</h2>
         </div>
-        <Button1 className={styles.checkoutButton} onClick={handleCheckoutShow}>Complete Order</Button1>
+        <Button1 className={styles.checkoutButton} onClick={cart.length > 0 && handleCheckoutShow}>Complete Order</Button1>
       </div>
     </div>
   );

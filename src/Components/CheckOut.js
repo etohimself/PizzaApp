@@ -46,6 +46,9 @@ function CheckOut() {
     setCreditCardCVV2,
     termsAgreed,
     handleTermsClick,
+    handleOrderNow,
+    checkoutError,
+    formErrorList,
     cart,
   } = useContext(AppContext);
 
@@ -125,6 +128,20 @@ function CheckOut() {
     event.target == event.currentTarget && handleCheckoutClose();
   };
 
+  const hasError = (itemid) => {
+    if (
+      formErrorList &&
+      formErrorList.length > 0 &&
+      formErrorList.includes(itemid)
+    ) {
+      return styles.validationError;
+    } else {
+      return "";
+    }
+  };
+
+  //
+
   return (
     <div className={styles.CheckOutOverlay} onClick={closeMe}>
       <div className={styles.CheckOutContainer}>
@@ -133,11 +150,12 @@ function CheckOut() {
           <div className={styles.AddressContainer}>
             <h1>Delivery Address</h1>
             <div className={styles.inputAreaContainer}>
-              <div className={`${styles.inputArea} ${styles.inputAreaWide}`}>
+              <div className={`${styles.inputArea} ${styles.inputAreaWide} `}>
                 <p>Address : </p>
                 <input
                   type="text"
                   value={recipientAddress}
+                  className={`${hasError("checkout-address")}`}
                   onChange={(e) => setRecipientAddress(e.target.value)}
                   placeholder="District / Street / Building / City / Country"
                 ></input>
@@ -150,6 +168,7 @@ function CheckOut() {
                 <input
                   type="text"
                   value={recipientCountry}
+                  className={`${hasError("checkout-country")}`}
                   onChange={(e) => setRecipientCountry(e.target.value)}
                 ></input>
               </div>
@@ -159,6 +178,7 @@ function CheckOut() {
                 <input
                   type="text"
                   value={recipientCity}
+                  className={`${hasError("checkout-city")}`}
                   onChange={(e) => setRecipientCity(e.target.value)}
                 ></input>
               </div>
@@ -170,6 +190,7 @@ function CheckOut() {
                 <input
                   type="text"
                   value={recipientDistrict}
+                  className={`${hasError("checkout-district")}`}
                   onChange={(e) => setRecipientDistrict(e.target.value)}
                 ></input>
               </div>
@@ -179,6 +200,7 @@ function CheckOut() {
                 <input
                   type="text"
                   value={recipientStreet}
+                  className={`${hasError("checkout-street")}`}
                   onChange={(e) => setRecipientStreet(e.target.value)}
                 ></input>
               </div>
@@ -190,6 +212,7 @@ function CheckOut() {
                 <input
                   type="text"
                   value={recipientBuildingNumber}
+                  className={`${hasError("checkout-building")}`}
                   onChange={(e) => setRecipientBuildingNumber(e.target.value)}
                 ></input>
               </div>
@@ -199,6 +222,7 @@ function CheckOut() {
                 <input
                   type="text"
                   value={recipientPostCode}
+                  className={`${hasError("checkout-postcode")}`}
                   onChange={(e) => setRecipientPostCode(e.target.value)}
                 ></input>
               </div>
@@ -218,6 +242,7 @@ function CheckOut() {
                 <input
                   type="text"
                   value={recipientFullName}
+                  className={`${hasError("checkout-name")}`}
                   onChange={(e) => setRecipientFullName(e.target.value)}
                 ></input>
               </div>
@@ -228,6 +253,7 @@ function CheckOut() {
                   placeholder="+## ### ### ## ##"
                   type="text"
                   value={recipientPhoneNumber}
+                  className={`${hasError("checkout-phone")}`}
                   onChange={(e) => setRecipientPhoneNumber(e.target.value)}
                 ></input>
               </div>
@@ -239,6 +265,7 @@ function CheckOut() {
                   <input
                     type="number"
                     value={creditCardNumber}
+                    className={`${hasError("checkout-cardnumber")}`}
                     onChange={(e) =>
                       setCreditCardNumber(e.target.value.slice(0, 16))
                     }
@@ -258,6 +285,7 @@ function CheckOut() {
                 <input
                   type="text"
                   value={creditCardHolder}
+                  className={`${hasError("checkout-cardholder")}`}
                   onChange={(e) => setCreditCardHolder(e.target.value)}
                   placeholder="John Appleseed"
                 ></input>
@@ -270,12 +298,14 @@ function CheckOut() {
               <div className={styles.inputArea}>
                 <p>Expiration date : </p>
                 <input
-                  className={styles.creditCardMonth}
                   type="number"
                   maxLength="2"
                   min="01"
                   max="12"
                   value={creditCardExpirationMonth}
+                  className={`${styles.creditCardMonth} ${hasError(
+                    "checkout-cardmonth"
+                  )}`}
                   onChange={(e) =>
                     setCreditCardExpirationMonth(e.target.value.slice(0, 2))
                   }
@@ -283,7 +313,9 @@ function CheckOut() {
                 ></input>
                 <span> / </span>
                 <input
-                  className={styles.creditCardYear}
+                  className={`${styles.creditCardYear} ${hasError(
+                    "checkout-cardyear"
+                  )}`}
                   maxLength="4"
                   minLength="4"
                   min="2022"
@@ -299,7 +331,9 @@ function CheckOut() {
               <div className={styles.inputArea}>
                 <p>CVV/CVV2 </p>
                 <input
-                  className={styles.creditCardCVV}
+                  className={`${styles.creditCardCVV2} ${hasError(
+                    "checkout-cardcvv"
+                  )}`}
                   type="number"
                   value={creditCardCVV2}
                   onChange={(e) =>
@@ -314,12 +348,12 @@ function CheckOut() {
               className={`${styles.inputAreaContainer} ${styles.termsAndPrice}`}
             >
               <div
-                className={`${styles.inputArea}> ${styles.termsAndConditions}`}
+                className={`${styles.inputArea}> ${styles.termsAndConditions} ${hasError("checkout-terms")}`}
+                onClick={handleTermsClick}
               >
                 <CheckBox
                   value={termsAgreed}
-                  className={styles.termsCheckBox}
-                  onClick={handleTermsClick}
+                  className={`${styles.termsCheckBox} ${hasError("checkout-terms")}`}
                 />
                 I understand <b>this is a demo project</b>, therefore I will not
                 be charged or delivered a real life product. I understand my
@@ -336,10 +370,11 @@ function CheckOut() {
           </div>
         </div>
         <div className={styles.actionBar}>
+          <div className={styles.errorMsg}>{checkoutError}</div>
           <Button1 className={styles.clearButton} onClick={handleClearCheckout}>
             Clear All
           </Button1>
-          <Button1 className={styles.orderButton} onClick={handleClearCheckout}>
+          <Button1 className={styles.orderButton} onClick={handleOrderNow}>
             Order Now
           </Button1>
         </div>
