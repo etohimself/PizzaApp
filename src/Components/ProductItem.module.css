@@ -54,35 +54,31 @@
   border-radius: 0;
 }
 
-
-@media screen and (max-width:500px) {
+@media screen and (max-width: 500px) {
   .ProductItemInnerContainer {
     width: 80vw;
     height: auto;
-    min-height:40vw;
+    min-height: 40vw;
     margin: 18px;
   }
 
   .ProductName {
-    font-size:6vw; 
+    font-size: 6vw;
   }
 
   .ProductDescription {
-    font-size:4.75vw;
-    
+    font-size: 4.5vw;
   }
-  
+
   .ProductPrice {
-    font-size:6vw;
+    font-size: 6vw;
   }
 
   .ProductItemOuterContainer > img {
-    width:calc(30px + 32vw);
-    height:calc(30px + 32vw);
+    width: calc(20px + 32vw);
+    height: calc(20px + 32vw);
   }
-
   .ProductDescription {
     width: 100%;
   }
-  
 }

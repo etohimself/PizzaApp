@@ -18,7 +18,7 @@
   right: calc(min(-30%, -500px));
   width: 30%;
   min-width: 500px;
-  height: 100vh;
+  height: 100%;
   background-color: #e8e3d9;
   display: flex;
   flex-direction: column;
@@ -36,7 +36,7 @@
 }
 
 .CartTitle {
-  margin:0;
+  margin: 0;
 }
 
 .ItemContainer {
@@ -100,7 +100,7 @@
 
 .CartItemTitleBar > i {
   font-size: 30px;
-  cursor:pointer;
+  cursor: pointer;
 }
 
 .CartItemActionBar {
@@ -113,8 +113,8 @@
 }
 
 .CartItemPrice {
-    padding-left:10px;
-    font-weight: 800;
+  padding-left: 10px;
+  font-weight: 800;
 }
 
 .PriceBar {
@@ -133,7 +133,7 @@
 }
 
 .checkoutButton {
-  align-self:flex-end;
+  align-self: flex-end;
 }
 
 @media screen and (max-width: 750px) {
@@ -141,6 +141,7 @@
     width: 80%;
     min-width: 200px;
     right: calc(min(-80%, -200px));
+    height:90%;
   }
   .CartContainerVisible {
     right: 0;
@@ -165,22 +166,21 @@
   .CartItemInfo {
     width: 100%;
   }
-  
+
   .CartItemTitleBar > h2 {
-    font-size:calc(10px + 3vw);
+    font-size: calc(10px + 3vw);
   }
 
   .CartItemTitleBar > i {
     margin-top: 3px;
-    font-size:calc(12px + 4vw);
+    font-size: calc(12px + 4vw);
   }
 
   .PriceBar > p {
     font-size: calc(10px + 3vw);
   }
-  
+
   .PriceBar > h2 {
     font-size: calc(12px + 3vw);
   }
-
 }

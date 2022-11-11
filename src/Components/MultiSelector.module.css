@@ -44,3 +44,19 @@
 .selectionBoxFill.isVisible {
   display: block;
 }
+
+@media screen and (max-width: 750px) {
+  .MultiSelectorContainer > h1 {
+    font-size: 18px;
+  }
+  .MultiSelectorContainer {
+    font-size: 14px;
+  }
+  .selectionCircle {
+    width: 20px;
+    height: 20px;
+  }
+  .MultiSelectorContainer {
+    margin-bottom: 10px;
+  }
+}

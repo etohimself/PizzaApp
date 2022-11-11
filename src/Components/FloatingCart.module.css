@@ -1,55 +1,89 @@
 .FloatingCartContainer {
-    position:fixed;
-    top:40%;
-    display:flex;
-    right:-80px;
-    background-color: #A62A0E;
-    width:60px;
-    height:180px;
-    font-size:24px;
-    color:white;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    box-shadow: -4px 4px 20px 8px rgb(0,0,0,0.35);
-    cursor:pointer;
-    transition: all 0.5s ease-out;
+  position: fixed;
+  top: 40%;
+  display: flex;
+  right: -80px;
+  background-color: #a62a0e;
+  width: 60px;
+  height: 180px;
+  font-size: 24px;
+  color: white;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  box-shadow: -4px 4px 20px 8px rgb(0, 0, 0, 0.35);
+  cursor: pointer;
+  transition: all 0.5s ease-out;
 }
 
 .VerticalText {
-    writing-mode:vertical-lr;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom:10px;
+  writing-mode: vertical-lr;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
 }
 
 .CartIcon {
-    width:40px;
-    height:40px;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
 .CartCounter {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: red;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    font-family: "Arial";
-    position: absolute;
-    top:-10px;
-    right:-10px;  
-    font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: red;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-family: "Arial";
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-weight: 600;
 }
 
 .ShowFloatingCart {
-    right:0;
+  right: 0;
+}
+
+@media screen and (max-width: 750px) {
+  .FloatingCartContainer {
+    top: 30%;
+    display: flex;
+    right: -80px;
+    background-color: #a62a0e;
+    width: 40px;
+    height: 160px;
+    font-size: 20px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+  }
+
+  .CartIcon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .CartCounter {
+    width: 20px;
+    height: 20px;
+    top: -2px;
+    right: -2px;
+  }
+
+  .ShowFloatingCart {
+    right: 0;
+  }
 }

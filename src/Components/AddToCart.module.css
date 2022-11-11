@@ -132,7 +132,7 @@
   
   .AddToCartContainer {
     width: 88%;
-    height: 80%;
+    height: 90%;
   }
 
   .InfoContainer {
@@ -190,11 +190,12 @@
 
 @media screen and (max-width: 420px) {
    .PriceLabel {
-    font-size:calc(16px + 4vw);
+    font-size:calc(10px + 4vw);
   }
   
   .DescriptionContainer {
     display: block;
+    height:auto;
   }
 
   .DescriptionTextArea {
@@ -208,11 +209,11 @@
   }
 
   .DescriptionTextArea > h1 {
-    font-size: 28px;
+    font-size: 20px;
   }
 
   .DescriptionTextArea > p {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .PreferenceContainer {

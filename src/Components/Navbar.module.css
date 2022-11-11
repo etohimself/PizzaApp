@@ -68,33 +68,36 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  height:auto;
+  height: auto;
   width: 100%;
   background-color: #4c1108;
-  color: #E8E3D9;
+  color: #e8e3d9;
   font-family: "Sura";
   box-sizing: border-box;
-  padding: 15px;
+  padding: 10px;
   position: fixed;
   bottom: 0;
   z-index: 2;
 }
 
-.NavbarMobileButton, .CartMobileButton {
-  display:flex;
+.NavbarMobileButton,
+.CartMobileButton {
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  cursor:pointer;
+  cursor: pointer;
 }
 
-.NavbarMobileButton > p, .CartMobileButton > p {
-  font-size:18px;
-  margin:0;
+.NavbarMobileButton > p,
+.CartMobileButton > p {
+  font-size: 18px;
+  margin: 0;
 }
 
-.NavbarMobileButton > i, .CartMobileButton > i {
-  font-size:30px;
+.NavbarMobileButton > i,
+.CartMobileButton > i {
+  font-size: 30px;
 }
 
 .CartMobileButton {
@@ -106,21 +109,20 @@
   align-items: center;
   justify-content: center;
   background-color: red;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   position: absolute;
   top: -10px;
   right: 0;
   font-family: "Arial";
-  font-size:22px;
+  font-size: 22px;
   font-weight: 600;
 }
 
 .ShowItem {
-  display:flex;
+  display: flex;
 }
-
 
 @media screen and (max-width: 1200px) {
   .NavbarContainer {
@@ -149,18 +151,20 @@
   .NavbarContainer {
     display: none;
   }
-  
+
   .NavbarContainerMobile {
-    display:flex;
+    display: flex;
   }
 }
 
 @media screen and (max-width: 400px) {
-  .NavbarMobileButton > p, .CartMobileButton > p {
-    font-size:calc(8px + 2vw);
+  .NavbarMobileButton > p,
+  .CartMobileButton > p {
+    font-size: calc(6px + 2vw);
   }
-  
-  .NavbarMobileButton > i, .CartMobileButton > i {
-    font-size:calc(18px + 2vw);
+
+  .NavbarMobileButton > i,
+  .CartMobileButton > i {
+    font-size: calc(12px + 2vw);
   }
 }

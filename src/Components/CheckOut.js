@@ -348,12 +348,16 @@ function CheckOut() {
               className={`${styles.inputAreaContainer} ${styles.termsAndPrice}`}
             >
               <div
-                className={`${styles.inputArea}> ${styles.termsAndConditions} ${hasError("checkout-terms")}`}
+                className={`${styles.inputArea}> ${
+                  styles.termsAndConditions
+                } ${hasError("checkout-terms")}`}
                 onClick={handleTermsClick}
               >
                 <CheckBox
                   value={termsAgreed}
-                  className={`${styles.termsCheckBox} ${hasError("checkout-terms")}`}
+                  className={`${styles.termsCheckBox} ${hasError(
+                    "checkout-terms"
+                  )}`}
                 />
                 I understand <b>this is a demo project</b>, therefore I will not
                 be charged or delivered a real life product. I understand my
