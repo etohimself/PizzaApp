@@ -11,7 +11,8 @@ import CheckOut from "./Components/CheckOut";
 import OrderStatus from "./Components/OrderStatus";
 
 function App() {
-  const { isAddToCartVisible, checkoutVisible } = useContext(AppContext);
+  const { isAddToCartVisible, checkoutVisible, orderStatusVisible } =
+    useContext(AppContext);
 
   return (
     <div className="App">
@@ -22,7 +23,7 @@ function App() {
       <Cart />
       {isAddToCartVisible ? <AddToCart /> : ""}
       {checkoutVisible ? <CheckOut /> : ""}
-      <OrderStatus />
+      {orderStatusVisible ? <OrderStatus /> : ""}
     </div>
   );
 }

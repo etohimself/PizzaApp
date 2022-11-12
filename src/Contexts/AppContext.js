@@ -447,6 +447,7 @@ export function AppContextProvider(props) {
   const [termsAgreed, setTermsAgreed] = useState(0);
   const [checkoutError, setCheckoutError] = useState("");
   const [formErrorList, setFormErrorList] = useState([]);
+  const [orderStatusVisible, setOrderStatusVisible] = useState(0);
 
   //=================================================== FUNCTIONS =================================================================
   const filterProducts = (rawDB, filterType) => {
@@ -541,6 +542,14 @@ export function AppContextProvider(props) {
     setCartVisible(0);
   };
 
+  const handleOrderStatusShow = () => {
+    setOrderStatusVisible(1);
+  };
+
+  const handleOrderStatusClose = () => {
+    setOrderStatusVisible(0);
+  };
+
   const handleIncreaseItemCount = (index) => {
     setCart((previousCart) => {
       return previousCart.map((eachItem, currentIndex) => {
@@ -626,8 +635,13 @@ export function AppContextProvider(props) {
         "You must fill out the form correctly and agree to our terms and conditions."
       );
     if (errorList.length < 1) {
-      alert("Order succesful!"); //Order Succesful Screen comes here
+      //Actually make the purchase here if server was implemented..
+      //This is a demo project, we do not store any info..
+      //We are using localStorage for simulation purpose for now..
       handleCheckoutClose();
+      handleOrderStatusShow();
+      handleClearCheckout();
+      setCart([]);
     }
   };
 
@@ -697,6 +711,9 @@ export function AppContextProvider(props) {
         handleOrderNow,
         checkoutError,
         formErrorList,
+        orderStatusVisible,
+        handleOrderStatusShow,
+        handleOrderStatusClose,
       }}
     >
       {props.children}
