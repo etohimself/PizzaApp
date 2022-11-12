@@ -11,9 +11,9 @@ function OrderStatus() {
           <h1>{statusTitle}</h1>
           <StepsGraph>
             <Step done={1}>Order Received</Step>
-            <Step>Started Preparing</Step>
-            <Step>On The Way</Step>
-            <Step>Order Delivered</Step>
+            <Step done={2}>Started Preparing</Step>
+            <Step done={3}>On The Way</Step>
+            <Step done={4}>Order Delivered</Step>
           </StepsGraph>
         </div>
       </div>

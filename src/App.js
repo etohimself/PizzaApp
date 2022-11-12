@@ -22,6 +22,7 @@ function App() {
       <Cart />
       {isAddToCartVisible ? <AddToCart /> : ""}
       {checkoutVisible ? <CheckOut /> : ""}
+      <OrderStatus />
     </div>
   );
 }

@@ -1,11 +1,7 @@
 .StepContainer {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  margin: 0 10px;
-  padding: 0;
-  width: 80px;
   position: relative;
 }
 
@@ -14,29 +10,136 @@
   height: 30px;
   border-radius: 50%;
   border: 6px solid rgba(167, 41, 13, 0.25);
-  background-color: #E8E3D9;
+  background-color: #e8e3d9;
+  flex-shrink: 0;
 }
 
 .StepContainer.isDone .CirclePlaceHolder {
-    display:none;
+  display: none;
 }
 
 .StepContainer > img {
   display: none;
   width: 42px;
   height: 42px;
-  background-color: #E8E3D9;
 }
 
 .StepContainer.isDone > img {
   display: block;
 }
 
+.leftBar {
+  width: 8vw;
+  flex-shrink: 0;
+  height: 8px;
+  background-color: rgba(167, 41, 13, 0.25);
+}
+
+.StepContainer:nth-child(1) .leftBar {
+  display: none;
+}
+
+.StepContainer.isDone .leftBar {
+  background-color: rgba(167, 41, 13, 1);
+}
+
 .StepContainer > p {
+  position: absolute;
+  left: calc(8vw - 20px);
+  top: 50px;
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0;
   text-align: center;
   font-size: 16px;
   font-family: sans-serif;
   font-weight: 800;
-  color: rgba(0,0,0, 0.25);
+  color: rgba(0, 0, 0, 0.25);
+}
+
+.StepContainer.isDone > p {
+  color: black;
+}
+
+.StepContainer:nth-child(1) > p {
+  left: -20px;
+}
+
+.imgContainer {
+  position: relative;
+}
+
+@media screen and (max-width: 1200px) {
+  .CirclePlaceHolder {
+    width: 28px;
+    height: 28px;
+  }
+  .StepContainer > img {
+    width: 39.2px;
+    height: 39.2px;
+  }
+  .StepContainer > p {
+    font-size: 14px;
+    width: 74.6px;
+    left: calc(10vw - 18.6px);
+  }
+  .StepContainer:nth-child(1) > p {
+    left: -18.6px;
+  }
+  .leftBar {
+    width: 10vw;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .CirclePlaceHolder {
+    width: 28px;
+    height: 28px;
+    border-width: 5px;
+  }
+  .StepContainer > img {
+    width: 33.6px;
+    height: 33.6px;
+  }
+  .StepContainer > p {
+    font-size: 12px;
+    width: 64px;
+    top: 40px;
+    left: calc(10vw - 14px);
+  }
+  .StepContainer:nth-child(1) > p {
+    left: -17px;
+  }
+  .leftBar {
+    width: 10vw;
+    height: 5px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .CirclePlaceHolder {
+    width: 8vw;
+    height: 8vw;
+    border-width: 1.6vw;
+  }
+  .StepContainer > img {
+    width: 11.2vw;
+    height: 11.2vw;
+  }
+  .StepContainer > p {
+    font-weight: 600;
+    font-size: 4vw;
+    width: 21.2vw;
+    top: 12.8vw;
+    left: 4.688vw;
+  }
+  .StepContainer:nth-child(1) > p {
+    left: -4.688vw;
+  }
+  .leftBar {
+    width: 10vw;
+    height: 1.6vw;
+  }
 }
