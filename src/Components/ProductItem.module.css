@@ -63,8 +63,16 @@
   }
 }
 
-.isDrink > .ProductItemRightInner {
-  min-height:100px;
+.isDrink > .ProductItemLeftInner > img {
+  left: -10%;
+  height: 120%;
+  width: auto;
+  top: -20%;
+}
+
+
+.isDrink > .ProductItemLeftInner {
+  width: 30%;
 }
 
 @media screen and (max-width: 400px) {
