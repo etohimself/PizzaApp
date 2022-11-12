@@ -127,7 +127,7 @@
 
 @media screen and (max-width: 750px) {
   .AddToCartOverlay {
-    height:95%;
+    height:calc(100% - min(64px, 10%));
   }
   
   .AddToCartContainer {

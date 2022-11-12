@@ -4,8 +4,7 @@
   display: flex;
   right: -80px;
   background-color: #a62a0e;
-  width: 60px;
-  height: 180px;
+  padding: 16px 8px;
   font-size: 24px;
   color: white;
   flex-direction: column;
@@ -27,8 +26,8 @@
 }
 
 .CartIcon {
-  width: 40px;
-  height: 40px;
+  width: 24px;
+  height: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -40,14 +39,15 @@
   align-items: center;
   justify-content: center;
   background-color: red;
-  width: 30px;
-  height: 30px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   font-family: "Arial";
   position: absolute;
   top: -10px;
   right: -10px;
   font-weight: 600;
+  font-size: 18px;
 }
 
 .ShowFloatingCart {
@@ -60,16 +60,15 @@
     display: flex;
     right: -80px;
     background-color: #a62a0e;
-    width: 40px;
-    height: 160px;
-    font-size: 20px;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
+    font-size: 16px;
+    padding:10px 5px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
   }
 
   .CartIcon {
-    width: 40px;
-    height: 40px;
+    width: 24px;
+    height: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -77,10 +76,11 @@
   }
 
   .CartCounter {
-    width: 20px;
-    height: 20px;
-    top: -2px;
-    right: -2px;
+    width: 16px;
+    height: 16px;
+    top: -5px;
+    right: -5px;
+    font-size: 14px;
   }
 
   .ShowFloatingCart {

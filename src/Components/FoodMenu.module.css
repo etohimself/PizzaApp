@@ -1,7 +1,7 @@
 .FoodMenuContainer {
   background-color: #e8e3d9;
-  background-image:url("/public/pizzabg.png");
-  overflow:hidden;
+  background-image: url("/public/pizzabg.png");
+  overflow: hidden;
   box-sizing: border-box;
   margin-top: 50px;
   padding-top: 20px;
@@ -13,17 +13,23 @@
 
 .FoodMenuContainer > h1 {
   margin: 0;
-  font-size: 40px;
+  font-size: 35px;
   color: #4c1108;
   font-family: "Sura";
 }
 
-@media screen and (max-width:500px) {
+@media screen and (max-width: 750px) {
+  .FoodMenuContainer > h1 {
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 500px) {
   .FoodMenuContainer {
     margin-top: 0;
   }
-  
+
   .FoodMenuContainer > h1 {
-    font-size:30px;
+    font-size: 24px;
   }
 }

@@ -261,7 +261,7 @@ div.validationError {
 
 @media screen and (max-width: 750px) {
   .CheckOutOverlay {
-    height: 90%;
+    height: calc(100% - min(64px, 10%));
   }
   .CheckOutContainer {
     width: 90%;
@@ -281,18 +281,17 @@ div.validationError {
     background: none;
     color: #4c1108;
     border: 1.5px solid #4c1108;
-    width:95%;
-    margin-left:0;
+    width: 95%;
+    margin-left: 0;
   }
 
-  
   .orderButton {
     margin-top: 5px;
     box-sizing: border-box;
     font-size: 16px;
     padding: 8px 20px;
-    width:95%;
-    margin-left:0;
+    width: 95%;
+    margin-left: 0;
   }
 }
 
@@ -345,7 +344,6 @@ div.validationError {
     display: block;
     width: 100%;
   }
-
 }
 
 input::-webkit-outer-spin-button,

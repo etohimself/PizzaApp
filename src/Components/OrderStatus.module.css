@@ -1,0 +1,38 @@
+.OrderStatusOverlay {
+  position: fixed;
+  top: 0;
+  height: 0;
+  width: 100%;
+  height: calc(100% - min(64px, 10%));
+  background-color: rgba(0, 0, 0, 0.25);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.OrderStatusContainer {
+  background-color: #e8e3d9;
+  width: 50%;
+  height: 60%;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 1.5%;
+}
+
+.OrderStatusInner {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #c7c7c7;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1%;
+  color: #4c1108;
+  font-family: "Sura";
+}
+
+.OrderStatusInner > h1 {
+  margin: 0;
+  font-size: 28px;
+}

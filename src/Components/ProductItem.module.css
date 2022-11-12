@@ -1,41 +1,45 @@
-.ProductItemOuterContainer {
+.ProductItemContainer {
   cursor: pointer;
 }
 
-.ProductItemOuterContainer > img {
-  width: 150px;
-  height: 150px;
-  margin: 0;
-  position: absolute;
-}
-
-.ProductItemInnerContainer {
-  width: 300px;
-  height: auto;
-  min-height: 140px;
+.ProductItemContainer {
+  display: flex;
   background-color: #a62a0e;
   color: white;
   border-radius: 15px;
-  margin: 25px;
-  display: flex;
-  flex-direction: column;
+  margin: 16px;
   box-sizing: border-box;
-  padding-left: 40%;
+  font-size: 16px;
+  width: 300px;
+  box-sizing: border-box;
 }
 
-.ProductItemInnerContainer.isDrink {
-  padding-left: 30%;
-  padding-top: 3%;
+.ProductItemLeftInner {
+  width: 40%;
+  height: 100%;
+  position: relative;
+}
+
+.ProductItemLeftInner > img {
+  position: absolute;
+  width: 110%;
+  top: -20%;
+  left: -20%;
+}
+
+.ProductItemRightInner {
+  width: 60%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 .ProductName {
   font-size: 22px;
   font-weight: 600;
   font-family: "Sura";
-}
-
-.ProductDescription {
-  width: 150px;
 }
 
 .ProductPrice {
@@ -45,40 +49,59 @@
   color: #f9d11f;
 }
 
-.ProductItemContainer.isDrink > img {
-  left: -20px;
-  top: -20px;
-}
-
-.ProductItemContainer.isDeal > img {
-  border-radius: 0;
-}
-
 @media screen and (max-width: 500px) {
-  .ProductItemInnerContainer {
-    width: 80vw;
-    height: auto;
-    min-height: 40vw;
-    margin: 18px;
-  }
-
   .ProductName {
-    font-size: 6vw;
+    font-size: 18px;
   }
-
-  .ProductDescription {
-    font-size: 4.5vw;
-  }
-
   .ProductPrice {
-    font-size: 6vw;
+    font-size: 18px;
   }
+  .ProductItemContainer {
+    width: 240px;
+    font-size: 14px;
+    border-radius: 10px;
+  }
+}
 
-  .ProductItemOuterContainer > img {
-    width: calc(20px + 32vw);
-    height: calc(20px + 32vw);
+.isDrink > .ProductItemRightInner {
+  min-height:100px;
+}
+
+@media screen and (max-width: 400px) {
+  .ProductName {
+    font-size: 14px;
   }
-  .ProductDescription {
+  .ProductPrice {
+    font-size: 14px;
+  }
+  .ProductItemContainer {
+    font-size: 12px;
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 250px) {
+  .ProductItemContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+  .ProductItemLeftInner {
     width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    box-sizing: border-box;
+  }
+  .ProductItemRightInner {
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+  }
+  .ProductItemLeftInner > img {
+    position: initial;
+    width: auto;
+    height: 100%;
   }
 }

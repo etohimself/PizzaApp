@@ -16,28 +16,32 @@
 }
 
 .WelcomerTextArea > h1 {
-  font-size: 6vw;
+  font-size: min(120px, 6vw);
   margin: 0;
 }
 
 .WelcomerTextArea > h2 {
-  font-size: 3vw;
+  font-size: min(60px, 3vw);
   color: rgba(255, 255, 255, 0.6);
   margin: 0;
 }
 
 .WelcomerTextArea > h3 {
-  font-size: 1.2vw;
+  font-size: min(24px, 1.2vw);
   font-weight: 200;
 }
 
 .WelcomerImageArea {
   flex-shrink: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .WelcomerImageArea > img {
-  min-width: 100%;
-  min-height: 100%;
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
 }
 
 @media screen and (max-width: 1200px) {
@@ -61,8 +65,8 @@
   }
 }
 
-@media screen and (max-width:500px) {
+@media screen and (max-width: 500px) {
   .WelcomerTextArea {
-    display:none;
+    display: none;
   }
 }

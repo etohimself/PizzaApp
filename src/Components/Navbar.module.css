@@ -21,7 +21,7 @@
 }
 
 .BrandLabel {
-  font-size: 30px;
+  font-size: 28px;
   font-family: "Sura";
   font-weight: 700;
   padding-left: 15px;
@@ -68,13 +68,13 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  height: 10%;
+  height: min(64px, 10%);
   width: 100%;
   background-color: #4c1108;
   color: #e8e3d9;
   font-family: "Sura";
   box-sizing: border-box;
-  padding: 10px;
+  padding: 0 5%;
   position: fixed;
   bottom: 0;
   z-index: 2;
@@ -91,13 +91,13 @@
 
 .NavbarMobileButton > p,
 .CartMobileButton > p {
-  font-size: 18px;
+  font-size: 14px;
   margin: 0;
 }
 
 .NavbarMobileButton > i,
 .CartMobileButton > i {
-  font-size: 30px;
+  font-size: 16px;
 }
 
 .CartMobileButton {
@@ -116,7 +116,7 @@
   top: -10px;
   right: 0;
   font-family: "Arial";
-  font-size: 22px;
+  font-size: 16px;
   font-weight: 600;
 }
 
@@ -137,13 +137,24 @@
   }
 
   .Brand > img {
-    width: 54px;
-    height: 54px;
+    width: 35px;
+    height: 35px;
   }
 
   .NavbarButton {
-    font-size: 24px;
+    font-size: 16px;
     margin-right: 30px;
+  }
+
+  .CartButton {
+    font-size: 22px;
+  }
+
+  .CartCounter {
+    width: 22px;
+    height: 22px;
+    font-size: 18px;
+    top: -15px;
   }
 }
 
@@ -157,7 +168,7 @@
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 300px) {
   .NavbarMobileButton > p,
   .CartMobileButton > p {
     font-size: calc(6px + 2vw);
@@ -166,5 +177,11 @@
   .NavbarMobileButton > i,
   .CartMobileButton > i {
     font-size: calc(12px + 2vw);
+  }
+
+  .CartCounterMobile {
+    width: 16px;
+    height: 16px;
+    font-size: 14px;
   }
 }

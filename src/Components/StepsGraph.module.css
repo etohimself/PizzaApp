@@ -1,0 +1,26 @@
+.StepsGraphContainer {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  position: relative;
+}
+
+.processLine {
+  position: absolute;
+  top: 20px;
+  width: 70%;
+  height: 6px;
+  background-color: #d8b4a6;
+}
+
+.processLine2 {
+  position: absolute;
+  left:20%;
+  position: absolute;
+  top: 20px;
+  width: 15%;
+  height: 6px;
+  background-color: #a7290d;
+}

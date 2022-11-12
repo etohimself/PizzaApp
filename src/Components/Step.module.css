@@ -1,0 +1,42 @@
+.StepContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+  padding: 0;
+  width: 80px;
+  position: relative;
+}
+
+.CirclePlaceHolder {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 6px solid rgba(167, 41, 13, 0.25);
+  background-color: #E8E3D9;
+}
+
+.StepContainer.isDone .CirclePlaceHolder {
+    display:none;
+}
+
+.StepContainer > img {
+  display: none;
+  width: 42px;
+  height: 42px;
+  background-color: #E8E3D9;
+}
+
+.StepContainer.isDone > img {
+  display: block;
+}
+
+.StepContainer > p {
+  margin: 0;
+  text-align: center;
+  font-size: 16px;
+  font-family: sans-serif;
+  font-weight: 800;
+  color: rgba(0,0,0, 0.25);
+}

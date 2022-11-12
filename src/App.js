@@ -8,6 +8,7 @@ import { useContext } from "react";
 import { AppContext } from "./Contexts/AppContext";
 import AddToCart from "./Components/AddToCart";
 import CheckOut from "./Components/CheckOut";
+import OrderStatus from "./Components/OrderStatus";
 
 function App() {
   const { isAddToCartVisible, checkoutVisible } = useContext(AppContext);
@@ -19,8 +20,8 @@ function App() {
       <FoodMenu />
       <FloatingCart />
       <Cart />
-      {isAddToCartVisible && <AddToCart />}
-      {checkoutVisible && <CheckOut />}
+      {isAddToCartVisible ? <AddToCart /> : ""}
+      {checkoutVisible ? <CheckOut /> : ""}
     </div>
   );
 }
