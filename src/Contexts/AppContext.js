@@ -1,12 +1,13 @@
 import { createContext, useState } from "react";
-import { uuidv4 } from "../Helpers/uuid.js";
+import { uuidv4 } from "../Helpers/uuid";
+import randNum from "../Helpers/randNum";
 export const AppContext = createContext();
 
 export function AppContextProvider(props) {
   //=================================================== STATE =================================================================0
   const [productDB, setProductDB] = useState([
     {
-      id: uuidv4(),
+      id: "1d783149-0480-45c0-99cc-b41b48bdfc9f",
       img: "pizza1.png",
       name: "Sausage Pizza",
       description:
@@ -14,14 +15,32 @@ export function AppContextProvider(props) {
       price: 12.9,
       productType: 2,
       sizes: [
-        { name: "Small", extraPrice: 0 },
-        { name: "Medium", extraPrice: 4.75 },
-        { name: "Large", extraPrice: 8.9 },
+        {
+          name: "Small",
+          extraPrice: 0,
+        },
+        {
+          name: "Medium",
+          extraPrice: 4.75,
+        },
+        {
+          name: "Large",
+          extraPrice: 8.9,
+        },
       ],
       crusts: [
-        { name: "Classic", extraPrice: 0 },
-        { name: "Wheat Thin Crust", extraPrice: 0.5 },
-        { name: "Cheese Burs", extraPrice: 2.75 },
+        {
+          name: "Classic",
+          extraPrice: 0,
+        },
+        {
+          name: "Wheat Thin Crust",
+          extraPrice: 0.5,
+        },
+        {
+          name: "Cheese Burs",
+          extraPrice: 2.75,
+        },
       ],
       ingredients: [
         "Tomatoe",
@@ -32,27 +51,54 @@ export function AppContextProvider(props) {
         "Onion",
       ],
       extras: [
-        { name: "Cheese", price: 0.85 },
-        { name: "Onions", price: 0.5 },
-        { name: "Sausages", price: 1.2 },
+        {
+          name: "Cheese",
+          price: 0.85,
+        },
+        {
+          name: "Onions",
+          price: 0.5,
+        },
+        {
+          name: "Sausages",
+          price: 1.2,
+        },
       ],
     },
     {
-      id: uuidv4(),
+      id: "3cd83661-df42-487d-99b4-09aca7cc15e6",
       img: "pizza2.png",
       name: "Mediterrian",
       description: "Cheese, olives, Tomatoes, sauce, classic taste.",
       price: 12.9,
       productType: 2,
       sizes: [
-        { name: "Small", extraPrice: 0 },
-        { name: "Medium", extraPrice: 4.75 },
-        { name: "Large", extraPrice: 8.9 },
+        {
+          name: "Small",
+          extraPrice: 0,
+        },
+        {
+          name: "Medium",
+          extraPrice: 4.75,
+        },
+        {
+          name: "Large",
+          extraPrice: 8.9,
+        },
       ],
       crusts: [
-        { name: "Classic", extraPrice: 0 },
-        { name: "Wheat Thin Crust", extraPrice: 0.5 },
-        { name: "Cheese Burs", extraPrice: 2.75 },
+        {
+          name: "Classic",
+          extraPrice: 0,
+        },
+        {
+          name: "Wheat Thin Crust",
+          extraPrice: 0.5,
+        },
+        {
+          name: "Cheese Burs",
+          extraPrice: 2.75,
+        },
       ],
       ingredients: [
         "Tomatoe",
@@ -63,27 +109,54 @@ export function AppContextProvider(props) {
         "Onion",
       ],
       extras: [
-        { name: "Cheese", price: 0.85 },
-        { name: "Onions", price: 0.5 },
-        { name: "Sausages", price: 1.2 },
+        {
+          name: "Cheese",
+          price: 0.85,
+        },
+        {
+          name: "Onions",
+          price: 0.5,
+        },
+        {
+          name: "Sausages",
+          price: 1.2,
+        },
       ],
     },
     {
-      id: uuidv4(),
+      id: "04030be2-3e27-4c5a-81d2-c79b81a5bc9b",
       img: "pizza3.png",
       name: "Mixed",
       description: "Two slices of Pizza house’s selection.",
       price: 16.9,
       productType: 1,
       sizes: [
-        { name: "Small", extraPrice: 0 },
-        { name: "Medium", extraPrice: 4.75 },
-        { name: "Large", extraPrice: 8.9 },
+        {
+          name: "Small",
+          extraPrice: 0,
+        },
+        {
+          name: "Medium",
+          extraPrice: 4.75,
+        },
+        {
+          name: "Large",
+          extraPrice: 8.9,
+        },
       ],
       crusts: [
-        { name: "Classic", extraPrice: 0 },
-        { name: "Wheat Thin Crust", extraPrice: 0.5 },
-        { name: "Cheese Burs", extraPrice: 2.75 },
+        {
+          name: "Classic",
+          extraPrice: 0,
+        },
+        {
+          name: "Wheat Thin Crust",
+          extraPrice: 0.5,
+        },
+        {
+          name: "Cheese Burs",
+          extraPrice: 2.75,
+        },
       ],
       ingredients: [
         "Tomatoe",
@@ -94,27 +167,54 @@ export function AppContextProvider(props) {
         "Onion",
       ],
       extras: [
-        { name: "Cheese", price: 0.85 },
-        { name: "Onions", price: 0.5 },
-        { name: "Sausages", price: 1.2 },
+        {
+          name: "Cheese",
+          price: 0.85,
+        },
+        {
+          name: "Onions",
+          price: 0.5,
+        },
+        {
+          name: "Sausages",
+          price: 1.2,
+        },
       ],
     },
     {
-      id: uuidv4(),
+      id: "4c647db2-8203-44ec-bfa1-d434f688d1a5",
       img: "pizza4.png",
       name: "Mushroom",
       description: "Classic Italian Pizza with Tomato sauce and cheese.",
       price: 12.9,
       productType: 2,
       sizes: [
-        { name: "Small", extraPrice: 0 },
-        { name: "Medium", extraPrice: 4.75 },
-        { name: "Large", extraPrice: 8.9 },
+        {
+          name: "Small",
+          extraPrice: 0,
+        },
+        {
+          name: "Medium",
+          extraPrice: 4.75,
+        },
+        {
+          name: "Large",
+          extraPrice: 8.9,
+        },
       ],
       crusts: [
-        { name: "Classic", extraPrice: 0 },
-        { name: "Wheat Thin Crust", extraPrice: 0.5 },
-        { name: "Cheese Burs", extraPrice: 2.75 },
+        {
+          name: "Classic",
+          extraPrice: 0,
+        },
+        {
+          name: "Wheat Thin Crust",
+          extraPrice: 0.5,
+        },
+        {
+          name: "Cheese Burs",
+          extraPrice: 2.75,
+        },
       ],
       ingredients: [
         "Tomatoe",
@@ -125,27 +225,54 @@ export function AppContextProvider(props) {
         "Onion",
       ],
       extras: [
-        { name: "Cheese", price: 0.85 },
-        { name: "Onions", price: 0.5 },
-        { name: "Sausages", price: 1.2 },
+        {
+          name: "Cheese",
+          price: 0.85,
+        },
+        {
+          name: "Onions",
+          price: 0.5,
+        },
+        {
+          name: "Sausages",
+          price: 1.2,
+        },
       ],
     },
     {
-      id: uuidv4(),
+      id: "d62a222c-749f-4827-b673-6b39f51e3746",
       img: "pizza5.png",
       name: "Veggy",
       description: "Classic Italian Pizza with Tomato sauce and cheese.",
       price: 16.9,
       productType: 1,
       sizes: [
-        { name: "Small", extraPrice: 0 },
-        { name: "Medium", extraPrice: 4.75 },
-        { name: "Large", extraPrice: 8.9 },
+        {
+          name: "Small",
+          extraPrice: 0,
+        },
+        {
+          name: "Medium",
+          extraPrice: 4.75,
+        },
+        {
+          name: "Large",
+          extraPrice: 8.9,
+        },
       ],
       crusts: [
-        { name: "Classic", extraPrice: 0 },
-        { name: "Wheat Thin Crust", extraPrice: 0.5 },
-        { name: "Cheese Burs", extraPrice: 2.75 },
+        {
+          name: "Classic",
+          extraPrice: 0,
+        },
+        {
+          name: "Wheat Thin Crust",
+          extraPrice: 0.5,
+        },
+        {
+          name: "Cheese Burs",
+          extraPrice: 2.75,
+        },
       ],
       ingredients: [
         "Tomatoe",
@@ -156,27 +283,54 @@ export function AppContextProvider(props) {
         "Onion",
       ],
       extras: [
-        { name: "Cheese", price: 0.85 },
-        { name: "Onions", price: 0.5 },
-        { name: "Sausages", price: 1.2 },
+        {
+          name: "Cheese",
+          price: 0.85,
+        },
+        {
+          name: "Onions",
+          price: 0.5,
+        },
+        {
+          name: "Sausages",
+          price: 1.2,
+        },
       ],
     },
     {
-      id: uuidv4(),
+      id: "aac3e388-1ca7-4306-8df6-4b3059805511",
       img: "pizza6.png",
       name: "Pepperoni",
       description: "Classic Italian Pizza with Tomato sauce and cheese.",
       price: 12.9,
       productType: 2,
       sizes: [
-        { name: "Small", extraPrice: 0 },
-        { name: "Medium", extraPrice: 4.75 },
-        { name: "Large", extraPrice: 8.9 },
+        {
+          name: "Small",
+          extraPrice: 0,
+        },
+        {
+          name: "Medium",
+          extraPrice: 4.75,
+        },
+        {
+          name: "Large",
+          extraPrice: 8.9,
+        },
       ],
       crusts: [
-        { name: "Classic", extraPrice: 0 },
-        { name: "Wheat Thin Crust", extraPrice: 0.5 },
-        { name: "Cheese Burs", extraPrice: 2.75 },
+        {
+          name: "Classic",
+          extraPrice: 0,
+        },
+        {
+          name: "Wheat Thin Crust",
+          extraPrice: 0.5,
+        },
+        {
+          name: "Cheese Burs",
+          extraPrice: 2.75,
+        },
       ],
       ingredients: [
         "Tomatoe",
@@ -187,27 +341,54 @@ export function AppContextProvider(props) {
         "Onion",
       ],
       extras: [
-        { name: "Cheese", price: 0.85 },
-        { name: "Onions", price: 0.5 },
-        { name: "Sausages", price: 1.2 },
+        {
+          name: "Cheese",
+          price: 0.85,
+        },
+        {
+          name: "Onions",
+          price: 0.5,
+        },
+        {
+          name: "Sausages",
+          price: 1.2,
+        },
       ],
     },
     {
-      id: uuidv4(),
+      id: "f8ab9a5b-f005-4fa1-8620-97fe0f9c07a1",
       img: "pizza7.png",
       name: "Cheesy",
       description: "Classic Italian Pizza with Tomato sauce and cheese.",
       price: 12.9,
       productType: 2,
       sizes: [
-        { name: "Small", extraPrice: 0 },
-        { name: "Medium", extraPrice: 4.75 },
-        { name: "Large", extraPrice: 8.9 },
+        {
+          name: "Small",
+          extraPrice: 0,
+        },
+        {
+          name: "Medium",
+          extraPrice: 4.75,
+        },
+        {
+          name: "Large",
+          extraPrice: 8.9,
+        },
       ],
       crusts: [
-        { name: "Classic", extraPrice: 0 },
-        { name: "Wheat Thin Crust", extraPrice: 0.5 },
-        { name: "Cheese Burs", extraPrice: 2.75 },
+        {
+          name: "Classic",
+          extraPrice: 0,
+        },
+        {
+          name: "Wheat Thin Crust",
+          extraPrice: 0.5,
+        },
+        {
+          name: "Cheese Burs",
+          extraPrice: 2.75,
+        },
       ],
       ingredients: [
         "Tomatoe",
@@ -218,27 +399,54 @@ export function AppContextProvider(props) {
         "Onion",
       ],
       extras: [
-        { name: "Cheese", price: 0.85 },
-        { name: "Onions", price: 0.5 },
-        { name: "Sausages", price: 1.2 },
+        {
+          name: "Cheese",
+          price: 0.85,
+        },
+        {
+          name: "Onions",
+          price: 0.5,
+        },
+        {
+          name: "Sausages",
+          price: 1.2,
+        },
       ],
     },
     {
-      id: uuidv4(),
+      id: "e79fde93-0e23-4b83-b8a2-7ddf7d44e481",
       img: "pizza8.png",
       name: "Gamer",
       description: "Classic Italian Pizza with Tomato sauce and cheese.",
       price: 16.9,
       productType: 1,
       sizes: [
-        { name: "Small", extraPrice: 0 },
-        { name: "Medium", extraPrice: 4.75 },
-        { name: "Large", extraPrice: 8.9 },
+        {
+          name: "Small",
+          extraPrice: 0,
+        },
+        {
+          name: "Medium",
+          extraPrice: 4.75,
+        },
+        {
+          name: "Large",
+          extraPrice: 8.9,
+        },
       ],
       crusts: [
-        { name: "Classic", extraPrice: 0 },
-        { name: "Wheat Thin Crust", extraPrice: 0.5 },
-        { name: "Cheese Burs", extraPrice: 2.75 },
+        {
+          name: "Classic",
+          extraPrice: 0,
+        },
+        {
+          name: "Wheat Thin Crust",
+          extraPrice: 0.5,
+        },
+        {
+          name: "Cheese Burs",
+          extraPrice: 2.75,
+        },
       ],
       ingredients: [
         "Tomatoe",
@@ -249,27 +457,54 @@ export function AppContextProvider(props) {
         "Onion",
       ],
       extras: [
-        { name: "Cheese", price: 0.85 },
-        { name: "Onions", price: 0.5 },
-        { name: "Sausages", price: 1.2 },
+        {
+          name: "Cheese",
+          price: 0.85,
+        },
+        {
+          name: "Onions",
+          price: 0.5,
+        },
+        {
+          name: "Sausages",
+          price: 1.2,
+        },
       ],
     },
     {
-      id: uuidv4(),
+      id: "aa3b58b3-0008-4c56-a139-dae3194203b4",
       img: "pizza9.png",
       name: "Buffalo",
       description: "Classic Italian Pizza with Tomato sauce and cheese.",
       price: 12.9,
       productType: 2,
       sizes: [
-        { name: "Small", extraPrice: 0 },
-        { name: "Medium", extraPrice: 4.75 },
-        { name: "Large", extraPrice: 8.9 },
+        {
+          name: "Small",
+          extraPrice: 0,
+        },
+        {
+          name: "Medium",
+          extraPrice: 4.75,
+        },
+        {
+          name: "Large",
+          extraPrice: 8.9,
+        },
       ],
       crusts: [
-        { name: "Classic", extraPrice: 0 },
-        { name: "Wheat Thin Crust", extraPrice: 0.5 },
-        { name: "Cheese Burs", extraPrice: 2.75 },
+        {
+          name: "Classic",
+          extraPrice: 0,
+        },
+        {
+          name: "Wheat Thin Crust",
+          extraPrice: 0.5,
+        },
+        {
+          name: "Cheese Burs",
+          extraPrice: 2.75,
+        },
       ],
       ingredients: [
         "Tomatoe",
@@ -280,74 +515,128 @@ export function AppContextProvider(props) {
         "Onion",
       ],
       extras: [
-        { name: "Cheese", price: 0.85 },
-        { name: "Onions", price: 0.5 },
-        { name: "Sausages", price: 1.2 },
+        {
+          name: "Cheese",
+          price: 0.85,
+        },
+        {
+          name: "Onions",
+          price: 0.5,
+        },
+        {
+          name: "Sausages",
+          price: 1.2,
+        },
       ],
     },
     {
-      id: uuidv4(),
+      id: "d1357203-4682-4a17-afe7-fcb7df62c464",
       img: "cocacola.png",
       name: "CocaCola",
       description: "220ml coca cola.",
       price: 2.9,
       productType: 4,
       sizes: [
-        { name: "220ml", extraPrice: 0 },
-        { name: "330ml", extraPrice: 1.2 },
-        { name: "1LT", extraPrice: 5.75 },
+        {
+          name: "220ml",
+          extraPrice: 0,
+        },
+        {
+          name: "330ml",
+          extraPrice: 1.2,
+        },
+        {
+          name: "1LT",
+          extraPrice: 5.75,
+        },
       ],
     },
     {
-      id: uuidv4(),
+      id: "f6e2f663-216d-40b1-a84c-a74f21b82ed8",
       img: "fanta.png",
       name: "Fanta",
       description: "220ml fanta.",
       price: 2.9,
       productType: 4,
       sizes: [
-        { name: "220ml", extraPrice: 0 },
-        { name: "330ml", extraPrice: 1.2 },
-        { name: "1LT", extraPrice: 5.75 },
+        {
+          name: "220ml",
+          extraPrice: 0,
+        },
+        {
+          name: "330ml",
+          extraPrice: 1.2,
+        },
+        {
+          name: "1LT",
+          extraPrice: 5.75,
+        },
       ],
     },
     {
-      id: uuidv4(),
+      id: "19b35d88-25bd-4baf-9475-28bf26a3ceb0",
       img: "pepsi.png",
       name: "Pepsi",
       description: "220ml pepsi.",
       price: 2.9,
       productType: 4,
       sizes: [
-        { name: "220ml", extraPrice: 0 },
-        { name: "330ml", extraPrice: 1.2 },
-        { name: "1LT", extraPrice: 5.75 },
+        {
+          name: "220ml",
+          extraPrice: 0,
+        },
+        {
+          name: "330ml",
+          extraPrice: 1.2,
+        },
+        {
+          name: "1LT",
+          extraPrice: 5.75,
+        },
       ],
     },
     {
-      id: uuidv4(),
+      id: "d1d9e55f-9839-4a44-affc-d42741ec635e",
       img: "sprite.png",
       name: "Sprite",
       description: "220ml sprite",
       price: 2.9,
       productType: 4,
       sizes: [
-        { name: "220ml", extraPrice: 0 },
-        { name: "330ml", extraPrice: 1.2 },
-        { name: "1LT", extraPrice: 5.75 },
+        {
+          name: "220ml",
+          extraPrice: 0,
+        },
+        {
+          name: "330ml",
+          extraPrice: 1.2,
+        },
+        {
+          name: "1LT",
+          extraPrice: 5.75,
+        },
       ],
     },
     {
-      id: uuidv4(),
+      id: "553521c4-21f0-461c-9b5c-62090a5b54fc",
       img: "deal1.png",
       name: "Double Mix",
       description: "2x Large Mixed Pizzas, 1x Coca Cola 1Lt",
       price: 32.49,
       productType: 3,
       crusts: [
-        { name: "Classic", extraPrice: 0 },
-        { name: "Wheat Thin Crust", extraPrice: 0.5 },
-        { name: "Cheese Burs", extraPrice: 2.75 },
+        {
+          name: "Classic",
+          extraPrice: 0,
+        },
+        {
+          name: "Wheat Thin Crust",
+          extraPrice: 0.5,
+        },
+        {
+          name: "Cheese Burs",
+          extraPrice: 2.75,
+        },
       ],
       ingredients: [
         "Tomatoe",
@@ -358,22 +647,40 @@ export function AppContextProvider(props) {
         "Onion",
       ],
       extras: [
-        { name: "Cheese", price: 0.85 },
-        { name: "Onions", price: 0.5 },
-        { name: "Sausages", price: 1.2 },
+        {
+          name: "Cheese",
+          price: 0.85,
+        },
+        {
+          name: "Onions",
+          price: 0.5,
+        },
+        {
+          name: "Sausages",
+          price: 1.2,
+        },
       ],
     },
     {
-      id: uuidv4(),
+      id: "0e6e7010-1e43-4b89-a211-4bbb05e2f2e7",
       img: "deal2.png",
       name: "Triplex",
       description: "3x Large Gamer Pizzas, 1.5Lt CocaCola",
       price: 32.49,
       productType: 3,
       crusts: [
-        { name: "Classic", extraPrice: 0 },
-        { name: "Wheat Thin Crust", extraPrice: 0.5 },
-        { name: "Cheese Burs", extraPrice: 2.75 },
+        {
+          name: "Classic",
+          extraPrice: 0,
+        },
+        {
+          name: "Wheat Thin Crust",
+          extraPrice: 0.5,
+        },
+        {
+          name: "Cheese Burs",
+          extraPrice: 2.75,
+        },
       ],
       ingredients: [
         "Tomatoe",
@@ -384,22 +691,40 @@ export function AppContextProvider(props) {
         "Onion",
       ],
       extras: [
-        { name: "Cheese", price: 0.85 },
-        { name: "Onions", price: 0.5 },
-        { name: "Sausages", price: 1.2 },
+        {
+          name: "Cheese",
+          price: 0.85,
+        },
+        {
+          name: "Onions",
+          price: 0.5,
+        },
+        {
+          name: "Sausages",
+          price: 1.2,
+        },
       ],
     },
     {
-      id: uuidv4(),
+      id: "4479278d-0b47-4aad-93ac-8e5f14be8266",
       img: "deal3.png",
       name: "Sprite Menu",
       description: "2x Large Mixed Pizzas, 1Lt Sprite",
       price: 42.8,
       productType: 3,
       crusts: [
-        { name: "Classic", extraPrice: 0 },
-        { name: "Wheat Thin Crust", extraPrice: 0.5 },
-        { name: "Cheese Burs", extraPrice: 2.75 },
+        {
+          name: "Classic",
+          extraPrice: 0,
+        },
+        {
+          name: "Wheat Thin Crust",
+          extraPrice: 0.5,
+        },
+        {
+          name: "Cheese Burs",
+          extraPrice: 2.75,
+        },
       ],
       ingredients: [
         "Tomatoe",
@@ -410,9 +735,18 @@ export function AppContextProvider(props) {
         "Onion",
       ],
       extras: [
-        { name: "Cheese", price: 0.85 },
-        { name: "Onions", price: 0.5 },
-        { name: "Sausages", price: 1.2 },
+        {
+          name: "Cheese",
+          price: 0.85,
+        },
+        {
+          name: "Onions",
+          price: 0.5,
+        },
+        {
+          name: "Sausages",
+          price: 1.2,
+        },
       ],
     },
   ]);
@@ -447,7 +781,8 @@ export function AppContextProvider(props) {
   const [termsAgreed, setTermsAgreed] = useState(0);
   const [checkoutError, setCheckoutError] = useState("");
   const [formErrorList, setFormErrorList] = useState([]);
-  const [orderStatusVisible, setOrderStatusVisible] = useState(0);
+  const [orderStatusVisible, setOrderStatusVisible] = useState(1);
+  const [viewedOrderNumber, setviewedOrderNumber] = useState(78499205);
 
   //=================================================== FUNCTIONS =================================================================
   const filterProducts = (rawDB, filterType) => {
@@ -610,26 +945,24 @@ export function AppContextProvider(props) {
 
   const handleOrderNow = () => {
     let errorList = [];
-    recipientAddress.length < 4 && errorList.push("checkout-address");
+    /*    recipientAddress.length < 4 && errorList.push("checkout-address");
     recipientCountry.length < 4 && errorList.push("checkout-country");
     recipientCity.length < 4 && errorList.push("checkout-city");
     recipientDistrict.length < 4 && errorList.push("checkout-district");
     recipientStreet.length < 4 && errorList.push("checkout-street");
     recipientBuildingNumber.length < 4 && errorList.push("checkout-building");
-    recipientPostCode.length < 4 && errorList.push("checkout-postcode");
     recipientFullName.length < 4 && errorList.push("checkout-name");
-    recipientPhoneNumber.length < 4 && errorList.push("checkout-phone");
+    recipientPhoneNumber.length < 7 && errorList.push("checkout-phone");
     creditCardHolder < 4 && errorList.push("checkout-cardholder");
-    creditCardNumber.length < 4 && errorList.push("checkout-cardnumber");
+    creditCardNumber.length < 16 && errorList.push("checkout-cardnumber");
     creditCardExpirationMonth.length < 2 &&
       errorList.push("checkout-cardmonth");
     creditCardExpirationYear.length < 4 && errorList.push("checkout-cardyear");
     creditCardCVV2.length < 3 && errorList.push("checkout-cardcvv");
     !termsAgreed && errorList.push("checkout-terms");
+    */
 
-    console.log(errorList);
     setFormErrorList([...errorList]);
-
     errorList.length > 0 &&
       setCheckoutError(
         "You must fill out the form correctly and agree to our terms and conditions."
@@ -638,16 +971,52 @@ export function AppContextProvider(props) {
       //Actually make the purchase here if server was implemented..
       //This is a demo project, we do not store any info..
       //We are using localStorage for simulation purpose for now..
+
+      let cart_idonly = cart.reduce((previousValue, currentItem) => {
+        return [
+          ...previousValue,
+          {
+            id: currentItem.id,
+            itemCount: currentItem.itemCount,
+            selectedSize: currentItem.selectedSize,
+            selectedCrust: currentItem.selectedCrust,
+            selectedExtras: currentItem.selectedExtras,
+            removedIngredients: currentItem.removedIngredients,
+          },
+        ];
+      }, []);
+
+      let myOrder = {
+        orderNumber: randNum(42431534, 98698943),
+        cart: cart_idonly,
+        recipientFullName,
+        recipientAddress,
+        recipientCity,
+        recipientCountry,
+        recipientDistrict,
+        recipientPhoneNumber,
+        recipientStreet,
+        recipientBuildingNumber,
+        orderDateTime:Date.now()
+      };
+
+      let storedOrders =
+        JSON.parse(localStorage.getItem("pizzaApp-Orders")) || [];
+      storedOrders.push(myOrder);
+      localStorage.setItem("pizzaApp-Orders", JSON.stringify(storedOrders));
+
       handleCheckoutClose();
       handleOrderStatusShow();
       handleClearCheckout();
       setCart([]);
+      setviewedOrderNumber(myOrder.orderNumber);
     }
   };
 
   return (
     <AppContext.Provider
       value={{
+        productDB,
         filteredProducts: filterProducts(productDB, currentSelection), //Menu displays the filtered products
         currentSelection, //Menu uses currentSelection to emphasize selected slicer
         updateSelection, //Menu uses this function to report slicer selections
@@ -714,6 +1083,7 @@ export function AppContextProvider(props) {
         orderStatusVisible,
         handleOrderStatusShow,
         handleOrderStatusClose,
+        viewedOrderNumber,
       }}
     >
       {props.children}

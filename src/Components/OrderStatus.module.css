@@ -44,12 +44,19 @@
 .orderDetailsContainer {
   display: flex;
   flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .orderDetailsLeft {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: 50%;
+}
+
+.orderDetailsRight {
+  width: 50%;
 }
 
 .orderDetailsLeft > * {
@@ -94,8 +101,22 @@
     width: 85%;
     padding: 3%;
   }
-  .OrderStatusInner > h1 {
+  .OrderStatusInner > h1,
+  .orderDetailsContainer > * > h2 {
     font-size: 24px;
+  }
+  .orderDetailsLeft > h1 {
+    font-size: 28px;
+  }
+  .orderDetailsContainer {
+    flex-direction: column;
+  }
+  .orderDetailsLeft {
+    width: 100%;
+  }
+  .orderDetailsRight {
+    margin-top: 20px;
+    width: 100%;
   }
 }
 
@@ -104,7 +125,11 @@
     width: 92%;
     padding: 1%;
   }
-  .OrderStatusInner > h1 {
+  .OrderStatusInner > h1,
+  .orderDetailsContainer > * > h2 {
     font-size: 20px;
+  }
+  .orderDetailsLeft > h1 {
+    font-size: 24px;
   }
 }

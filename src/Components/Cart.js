@@ -144,7 +144,7 @@ function Cart(props) {
         </div>
         <Button1
           className={styles.checkoutButton}
-          onClick={cart.length > 0 && handleCheckoutShow}
+          onClick={cart.length > 0 ? handleCheckoutShow : null}
         >
           Complete Order
         </Button1>
