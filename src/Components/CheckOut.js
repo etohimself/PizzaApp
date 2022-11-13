@@ -48,6 +48,7 @@ function CheckOut() {
     handleTermsClick,
     handleOrderNow,
     cart,
+    handleFillExample,
   } = useContext(AppContext);
 
   const [formErrorList, setFormErrorList] = useState([]);
@@ -412,6 +413,9 @@ function CheckOut() {
         </div>
         <div className={styles.actionBar}>
           <div className={styles.errorMsg}>{checkoutError}</div>
+          <Button1 className={styles.clearButton} onClick={handleFillExample}>
+            Fill Example
+          </Button1>
           <Button1 className={styles.clearButton} onClick={handleClearCheckout}>
             Clear All
           </Button1>

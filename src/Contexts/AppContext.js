@@ -1047,6 +1047,25 @@ export function AppContextProvider(props) {
     }
   };
 
+  const handleFillExample = () => {
+    setRecipientFullName("Ertugrul CORE");
+    setRecipientPhoneNumber("5385709786");
+    setRecipientCountry("Turkey");
+    setRecipientCity("Istanbul");
+    setRecipientDistrict("Kadikoy");
+    setRecipientStreet("Osmanaga");
+    setRecipientBuildingNumber("No 1/1");
+    setRecipientPostCode("34000");
+    setRecipientAddress("Osmanaga Mahallesi No 1/1 Kadikoy Istanbul");
+    setCreditCardNumber("5255505050505356");
+    setCreditCardHolder("John Applesead");
+    setCreditCardExpirationMonth("12");
+    setCreditCardExpirationYear("2028");
+    setCreditCardCVV2("123");
+    setTermsAgreed(0);
+    setCheckoutError("");
+  }
+
   return (
     <AppContext.Provider
       value={{
@@ -1126,6 +1145,7 @@ export function AppContextProvider(props) {
         handleCheckOrderShow,
         handleCheckOrderClose,
         checkOrderError,
+        handleFillExample
       }}
     >
       {props.children}
