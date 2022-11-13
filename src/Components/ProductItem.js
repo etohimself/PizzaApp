@@ -21,7 +21,7 @@ function ProductItem(props) {
       onClick={() => handleItemClicked(props.id)}
     >
       <div className={styles.ProductItemLeftInner}>
-        <img src={props.img} />
+        <img src={props.img} key={props.img} />
       </div>
       <div className={styles.ProductItemRightInner}>
         <div className={styles.ProductName}>{props.name}</div>
