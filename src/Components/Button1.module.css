@@ -1,14 +1,22 @@
 .ButtonContainer {
   background-color: #4c1108;
   color: #e8e3d9;
-  font-size: calc(16px + 0.3vw); 
+  font-size: calc(16px + 0.3vw);
   font-family: sans-serif;
-  display:inline-flex; /* Prevent Wrapping */
+  display: inline-flex; /* Prevent Wrapping */
   white-space: nowrap; /* Prevent Wrapping */
   align-items: center;
-  justify-content: center;  
-  padding: calc(6px + 0.1vw) calc(8px + 0.8vw); 
+  justify-content: center;
+  padding: calc(6px + 0.1vw) calc(8px + 0.8vw);
   border-radius: 5px;
   cursor: pointer;
   margin-left: calc(10px + 0.1vw);
+}
+
+.ButtonContainer.executing {
+  background-color: rgba(76, 17, 8, 0.5);
+}
+
+.ButtonContainer > i {
+  margin-left: 10px;
 }

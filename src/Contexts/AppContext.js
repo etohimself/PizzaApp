@@ -781,7 +781,6 @@ export function AppContextProvider(props) {
   const [creditCardCVV2, setCreditCardCVV2] = useState("");
   const [termsAgreed, setTermsAgreed] = useState(0);
   const [checkoutError, setCheckoutError] = useState("");
-  const [formErrorList, setFormErrorList] = useState([]);
   const [orderStatusVisible, setOrderStatusVisible] = useState(0);
   const [viewedOrderNumber, setviewedOrderNumber] = useState(0);
   const [checkOrderNumber, setCheckOrderNumber] = useState();
@@ -878,7 +877,6 @@ export function AppContextProvider(props) {
   const handleCheckoutShow = () => {
     setCheckoutVisible(1);
     setCheckoutError("");
-    setFormErrorList([]);
     setCartVisible(0);
   };
 
@@ -939,7 +937,6 @@ export function AppContextProvider(props) {
     setCreditCardExpirationYear("");
     setCreditCardCVV2("");
     setTermsAgreed(0);
-    setFormErrorList([]);
     setCheckoutError("");
   };
 
@@ -966,11 +963,6 @@ export function AppContextProvider(props) {
     creditCardCVV2.length < 3 && errorList.push("checkout-cardcvv");
     !termsAgreed && errorList.push("checkout-terms");
 
-    setFormErrorList([...errorList]);
-    errorList.length > 0 &&
-      setCheckoutError(
-        "You must fill out the form correctly and agree to our terms and conditions."
-      );
     if (errorList.length < 1) {
       //Actually make the purchase here if server was implemented..
       //This is a demo project, we do not store any info..
@@ -1013,6 +1005,12 @@ export function AppContextProvider(props) {
       handleClearCheckout();
       setCart([]);
       setviewedOrderNumber(myOrder.orderNumber);
+    } else {
+      //Somehow data passed the validation and arrived in server, but has errors
+      //This should not happen in theory, but just incase we are double checking
+      handleCheckoutClose();
+      handleClearCheckout();
+      console.log("Check out form validation error!");
     }
   };
 
@@ -1115,7 +1113,6 @@ export function AppContextProvider(props) {
         handleCheckoutClose,
         handleOrderNow,
         checkoutError,
-        formErrorList,
         orderStatusVisible,
         handleOrderStatusShow,
         handleOrderStatusClose,

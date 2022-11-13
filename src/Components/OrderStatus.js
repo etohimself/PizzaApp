@@ -107,10 +107,10 @@ function OrderStatus() {
             </Step>
           </StepsGraph>
           <p className={styles.statusDescription}>
-            We got your order. Your pizza will be prepared and delivered in 40
-            to 50 minutes depending on your location. Make sure to take a note
-            of the order number below. You can track the status via order number
-            or your contact phone number.
+            We got your order. Your pizza will be prepared and delivered in{" "}
+            <b>2 minutes</b> as this is a demo project. You can check every 30
+            seconds. Make sure to take a note of the order number below. You can
+            track the status via order number or your contact phone number.
           </p>
           <div className={styles.orderDetailsContainer}>
             <div className={styles.orderDetailsLeft}>

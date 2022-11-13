@@ -31,7 +31,7 @@ function CheckOrder() {
           <input
             placeholder="### ### ##"
             type="text"
-            value={checkOrderNumber}
+            value={checkOrderNumber || ""}
             onChange={(e) =>
               setCheckOrderNumber(e.target.value.replace(/\s/g, ""))
             }
@@ -40,14 +40,18 @@ function CheckOrder() {
           <input
             placeholder="+## ### ### ## ##"
             type="text"
-            value={checkOrderPhone}
+            value={checkOrderPhone || ""}
             onChange={(e) =>
               setCheckOrderPhone(e.target.value.replace(/\s/g, ""))
             }
           ></input>
         </div>
         <p className={styles.checkOrderErrorMsg}>{checkOrderError}</p>
-        <Button1 className={styles.CheckButton} onClick={handleCheckOrder}>
+        <Button1
+          className={styles.CheckButton}
+          onClick={handleCheckOrder}
+          delayed={1}
+        >
           Check Order
         </Button1>
       </div>

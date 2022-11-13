@@ -47,10 +47,12 @@ function CheckOut() {
     termsAgreed,
     handleTermsClick,
     handleOrderNow,
-    checkoutError,
-    formErrorList,
     cart,
   } = useContext(AppContext);
+
+  const [formErrorList, setFormErrorList] = useState([]);
+  const [checkoutError, setCheckoutError] = useState("");
+  const [formValidated, setFormValidated] = useState(0);
 
   useEffect(() => {
     let cardQuery = GetCardType(creditCardNumber);
@@ -140,7 +142,40 @@ function CheckOut() {
     }
   };
 
-  //
+  const validateFormAndSend = () => {
+    let errorList = [];
+    recipientAddress.length < 4 && errorList.push("checkout-address");
+    recipientCountry.length < 4 && errorList.push("checkout-country");
+    recipientCity.length < 4 && errorList.push("checkout-city");
+    recipientDistrict.length < 4 && errorList.push("checkout-district");
+    recipientStreet.length < 4 && errorList.push("checkout-street");
+    recipientBuildingNumber.length < 4 && errorList.push("checkout-building");
+    recipientFullName.length < 4 && errorList.push("checkout-name");
+    recipientPhoneNumber.length < 7 && errorList.push("checkout-phone");
+    creditCardHolder < 4 && errorList.push("checkout-cardholder");
+    creditCardNumber.length < 16 && errorList.push("checkout-cardnumber");
+    creditCardExpirationMonth.length < 2 &&
+      errorList.push("checkout-cardmonth");
+    creditCardExpirationYear.length < 4 && errorList.push("checkout-cardyear");
+    creditCardCVV2.length < 3 && errorList.push("checkout-cardcvv");
+    !termsAgreed && errorList.push("checkout-terms");
+
+    setFormErrorList([...errorList]);
+    errorList.length > 0 &&
+      setCheckoutError(
+        "You must fill out the form correctly and agree to our terms and conditions."
+      );
+    if (errorList.length < 1) {
+      setFormValidated(1);
+    }
+  };
+
+  useEffect(() => {
+    if (formValidated == 1) {
+      setCheckoutError("");
+      document.getElementById("checkout-orderButton").click(); //Simulate click
+    }
+  }, [formValidated]);
 
   return (
     <div className={styles.CheckOutOverlay} onClick={closeMe}>
@@ -154,7 +189,7 @@ function CheckOut() {
                 <p>Address : </p>
                 <input
                   type="text"
-                  value={recipientAddress}
+                  value={recipientAddress || ""}
                   className={`${hasError("checkout-address")}`}
                   onChange={(e) => setRecipientAddress(e.target.value)}
                   placeholder="District / Street / Building / City / Country"
@@ -167,7 +202,7 @@ function CheckOut() {
                 <p>Country : </p>
                 <input
                   type="text"
-                  value={recipientCountry}
+                  value={recipientCountry || ""}
                   className={`${hasError("checkout-country")}`}
                   onChange={(e) => setRecipientCountry(e.target.value)}
                 ></input>
@@ -177,7 +212,7 @@ function CheckOut() {
                 <p>City : </p>
                 <input
                   type="text"
-                  value={recipientCity}
+                  value={recipientCity || ""}
                   className={`${hasError("checkout-city")}`}
                   onChange={(e) => setRecipientCity(e.target.value)}
                 ></input>
@@ -189,7 +224,7 @@ function CheckOut() {
                 <p>District / Town : </p>
                 <input
                   type="text"
-                  value={recipientDistrict}
+                  value={recipientDistrict || ""}
                   className={`${hasError("checkout-district")}`}
                   onChange={(e) => setRecipientDistrict(e.target.value)}
                 ></input>
@@ -199,7 +234,7 @@ function CheckOut() {
                 <p>Street : </p>
                 <input
                   type="text"
-                  value={recipientStreet}
+                  value={recipientStreet || ""}
                   className={`${hasError("checkout-street")}`}
                   onChange={(e) => setRecipientStreet(e.target.value)}
                 ></input>
@@ -211,7 +246,7 @@ function CheckOut() {
                 <p>Building / Number: </p>
                 <input
                   type="text"
-                  value={recipientBuildingNumber}
+                  value={recipientBuildingNumber || ""}
                   className={`${hasError("checkout-building")}`}
                   onChange={(e) => setRecipientBuildingNumber(e.target.value)}
                 ></input>
@@ -221,7 +256,7 @@ function CheckOut() {
                 <p>Post Code : </p>
                 <input
                   type="text"
-                  value={recipientPostCode}
+                  value={recipientPostCode || ""}
                   className={`${hasError("checkout-postcode")}`}
                   onChange={(e) => setRecipientPostCode(e.target.value)}
                 ></input>
@@ -241,7 +276,7 @@ function CheckOut() {
                 <p>Recipient Name : </p>
                 <input
                   type="text"
-                  value={recipientFullName}
+                  value={recipientFullName || ""}
                   className={`${hasError("checkout-name")}`}
                   onChange={(e) => setRecipientFullName(e.target.value)}
                 ></input>
@@ -252,7 +287,7 @@ function CheckOut() {
                 <input
                   placeholder="+## ### ### ## ##"
                   type="text"
-                  value={recipientPhoneNumber}
+                  value={recipientPhoneNumber || ""}
                   className={`${hasError("checkout-phone")}`}
                   onChange={(e) =>
                     setRecipientPhoneNumber(e.target.value.replace(/\s/g, ""))
@@ -266,7 +301,7 @@ function CheckOut() {
                 <div className={styles.cardNumberArea}>
                   <input
                     type="number"
-                    value={creditCardNumber}
+                    value={creditCardNumber || ""}
                     className={`${hasError("checkout-cardnumber")}`}
                     onChange={(e) =>
                       setCreditCardNumber(e.target.value.slice(0, 16))
@@ -286,7 +321,7 @@ function CheckOut() {
                 <p>Card Holder's Name : </p>
                 <input
                   type="text"
-                  value={creditCardHolder}
+                  value={creditCardHolder || ""}
                   className={`${hasError("checkout-cardholder")}`}
                   onChange={(e) => setCreditCardHolder(e.target.value)}
                   placeholder="John Appleseed"
@@ -304,7 +339,7 @@ function CheckOut() {
                   maxLength="2"
                   min="01"
                   max="12"
-                  value={creditCardExpirationMonth}
+                  value={creditCardExpirationMonth || ""}
                   className={`${styles.creditCardMonth} ${hasError(
                     "checkout-cardmonth"
                   )}`}
@@ -323,7 +358,7 @@ function CheckOut() {
                   min="2022"
                   max="2050"
                   type="number"
-                  value={creditCardExpirationYear}
+                  value={creditCardExpirationYear || ""}
                   onChange={(e) =>
                     setCreditCardExpirationYear(e.target.value.slice(0, 4))
                   }
@@ -337,7 +372,7 @@ function CheckOut() {
                     "checkout-cardcvv"
                   )}`}
                   type="number"
-                  value={creditCardCVV2}
+                  value={creditCardCVV2 || ""}
                   onChange={(e) =>
                     setCreditCardCVV2(e.target.value.slice(0, cvvLength()))
                   }
@@ -380,7 +415,12 @@ function CheckOut() {
           <Button1 className={styles.clearButton} onClick={handleClearCheckout}>
             Clear All
           </Button1>
-          <Button1 className={styles.orderButton} onClick={handleOrderNow}>
+          <Button1
+            className={styles.orderButton}
+            onClick={formValidated ? handleOrderNow : validateFormAndSend}
+            delayed={formValidated ? 2 : 0}
+            id="checkout-orderButton"
+          >
             Order Now
           </Button1>
         </div>
