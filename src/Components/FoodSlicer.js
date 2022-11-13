@@ -4,22 +4,22 @@ import SlicerItem from "./SlicerItem.js";
 function FoodSlicer(props) {
   return (
     <div className={styles.FoodSlicerContainer}>
-      <SlicerItem img="Slicer1.png" id="1">
+      <SlicerItem img="slicer1.png" id="1">
         Special
         <br />
         Pizzas
       </SlicerItem>
-      <SlicerItem img="Slicer2.png" id="2">
+      <SlicerItem img="slicer2.png" id="2">
         Classic
         <br />
         Pizzas
       </SlicerItem>
-      <SlicerItem img="Slicer3.png" id="3">
+      <SlicerItem img="slicer3.png" id="3">
         Our
         <br />
         Deals
       </SlicerItem>
-      <SlicerItem img="Slicer4.png" id="4">
+      <SlicerItem img="slicer4.png" id="4">
         Drinks
       </SlicerItem>
     </div>
