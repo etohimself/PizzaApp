@@ -9,10 +9,15 @@ import { AppContext } from "./Contexts/AppContext";
 import AddToCart from "./Components/AddToCart";
 import CheckOut from "./Components/CheckOut";
 import OrderStatus from "./Components/OrderStatus";
+import CheckOrder from "./Components/CheckOrder";
 
 function App() {
-  const { isAddToCartVisible, checkoutVisible, orderStatusVisible } =
-    useContext(AppContext);
+  const {
+    isAddToCartVisible,
+    checkoutVisible,
+    orderStatusVisible,
+    checkOrderVisible,
+  } = useContext(AppContext);
 
   return (
     <div className="App">
@@ -24,6 +29,7 @@ function App() {
       {isAddToCartVisible ? <AddToCart /> : ""}
       {checkoutVisible ? <CheckOut /> : ""}
       {orderStatusVisible ? <OrderStatus /> : ""}
+      {checkOrderVisible ? <CheckOrder /> : ""}
     </div>
   );
 }

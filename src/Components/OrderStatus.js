@@ -4,6 +4,7 @@ import StepsGraph from "./StepsGraph";
 import Step from "./Step";
 import { AppContext } from "../Contexts/AppContext";
 import Button1 from "./Button1";
+import getLocalStorageOrders from "../Helpers/getLocalStorageOrders";
 
 function OrderStatus() {
   const { productDB, handleOrderStatusClose, viewedOrderNumber } =
@@ -13,8 +14,9 @@ function OrderStatus() {
     event.target == event.currentTarget && handleOrderStatusClose();
   };
 
+  const storedOrders = getLocalStorageOrders();
   const myOrder = viewedOrderNumber
-    ? JSON.parse(localStorage.getItem("pizzaApp-Orders")).filter(
+    ? storedOrders.filter(
         (eachOrder) => eachOrder.orderNumber == viewedOrderNumber
       )[0]
     : null;
@@ -94,9 +96,15 @@ function OrderStatus() {
           <h1>{statusTitle}</h1>
           <StepsGraph>
             <Step done={1}>Order Received</Step>
-            <Step done={myOrder && (Date.now() - myOrder.orderDateTime) > 30000}>Started Preparing</Step>
-            <Step done={myOrder && (Date.now() - myOrder.orderDateTime) > 60000}>On The Way</Step>
-            <Step done={myOrder && (Date.now() - myOrder.orderDateTime) > 90000}>Order Delivered</Step>
+            <Step done={myOrder && Date.now() - myOrder.orderDateTime > 30000}>
+              Started Preparing
+            </Step>
+            <Step done={myOrder && Date.now() - myOrder.orderDateTime > 60000}>
+              On The Way
+            </Step>
+            <Step done={myOrder && Date.now() - myOrder.orderDateTime > 90000}>
+              Order Delivered
+            </Step>
           </StepsGraph>
           <p className={styles.statusDescription}>
             We got your order. Your pizza will be prepared and delivered in 40
@@ -119,9 +127,9 @@ function OrderStatus() {
             <div className={styles.orderDetailsRight}>
               <h2>Ordered Items : </h2>
               {myOrder &&
-                myOrder.cart.map((eachItem) => {
+                myOrder.cart.map((eachItem, index) => {
                   return (
-                    <p>
+                    <p key={index}>
                       <b>{eachItem.itemCount}x </b>
                       {descriptionGenerator(findFromDB(eachItem))}
                     </p>

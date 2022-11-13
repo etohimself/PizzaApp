@@ -254,7 +254,9 @@ function CheckOut() {
                   type="text"
                   value={recipientPhoneNumber}
                   className={`${hasError("checkout-phone")}`}
-                  onChange={(e) => setRecipientPhoneNumber(e.target.value)}
+                  onChange={(e) =>
+                    setRecipientPhoneNumber(e.target.value.replace(/\s/g, ""))
+                  }
                 ></input>
               </div>
             </div>

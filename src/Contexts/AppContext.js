@@ -1,6 +1,7 @@
 import { createContext, useState } from "react";
-import { uuidv4 } from "../Helpers/uuid";
 import randNum from "../Helpers/randNum";
+import getLocalStorageOrders from "../Helpers/getLocalStorageOrders";
+
 export const AppContext = createContext();
 
 export function AppContextProvider(props) {
@@ -781,8 +782,12 @@ export function AppContextProvider(props) {
   const [termsAgreed, setTermsAgreed] = useState(0);
   const [checkoutError, setCheckoutError] = useState("");
   const [formErrorList, setFormErrorList] = useState([]);
-  const [orderStatusVisible, setOrderStatusVisible] = useState(1);
-  const [viewedOrderNumber, setviewedOrderNumber] = useState(78499205);
+  const [orderStatusVisible, setOrderStatusVisible] = useState(0);
+  const [viewedOrderNumber, setviewedOrderNumber] = useState(0);
+  const [checkOrderNumber, setCheckOrderNumber] = useState();
+  const [checkOrderPhone, setCheckOrderPhone] = useState("");
+  const [checkOrderVisible, setCheckOrderVisible] = useState(0);
+  const [checkOrderError, setCheckOrderError] = useState("");
 
   //=================================================== FUNCTIONS =================================================================
   const filterProducts = (rawDB, filterType) => {
@@ -945,7 +950,7 @@ export function AppContextProvider(props) {
 
   const handleOrderNow = () => {
     let errorList = [];
-    /*    recipientAddress.length < 4 && errorList.push("checkout-address");
+    recipientAddress.length < 4 && errorList.push("checkout-address");
     recipientCountry.length < 4 && errorList.push("checkout-country");
     recipientCity.length < 4 && errorList.push("checkout-city");
     recipientDistrict.length < 4 && errorList.push("checkout-district");
@@ -960,7 +965,6 @@ export function AppContextProvider(props) {
     creditCardExpirationYear.length < 4 && errorList.push("checkout-cardyear");
     creditCardCVV2.length < 3 && errorList.push("checkout-cardcvv");
     !termsAgreed && errorList.push("checkout-terms");
-    */
 
     setFormErrorList([...errorList]);
     errorList.length > 0 &&
@@ -997,11 +1001,10 @@ export function AppContextProvider(props) {
         recipientPhoneNumber,
         recipientStreet,
         recipientBuildingNumber,
-        orderDateTime:Date.now()
+        orderDateTime: Date.now(),
       };
 
-      let storedOrders =
-        JSON.parse(localStorage.getItem("pizzaApp-Orders")) || [];
+      let storedOrders = getLocalStorageOrders();
       storedOrders.push(myOrder);
       localStorage.setItem("pizzaApp-Orders", JSON.stringify(storedOrders));
 
@@ -1010,6 +1013,39 @@ export function AppContextProvider(props) {
       handleClearCheckout();
       setCart([]);
       setviewedOrderNumber(myOrder.orderNumber);
+    }
+  };
+
+  const handleCheckOrderShow = () => {
+    setCheckOrderNumber();
+    setCheckOrderPhone("");
+    setCheckOrderError("");
+    setCheckOrderVisible(1);
+  };
+
+  const handleCheckOrderClose = () => {
+    setCheckOrderVisible(0);
+  };
+
+  const handleCheckOrder = () => {
+    let storedOrders = getLocalStorageOrders();
+
+    let mostRecentOrder = storedOrders
+      .filter(
+        (eachOrder) =>
+          eachOrder.orderNumber == checkOrderNumber ||
+          eachOrder.recipientPhoneNumber == checkOrderPhone
+      )
+      .sort((a, b) => a.orderDateTime - b.orderDateTime)[0];
+
+    if (mostRecentOrder) {
+      setviewedOrderNumber(mostRecentOrder.orderNumber);
+      handleCheckOrderClose();
+      setOrderStatusVisible(1);
+    } else {
+      setCheckOrderError(
+        "We could not find your order. Please check your order number or your phone number."
+      );
     }
   };
 
@@ -1084,6 +1120,15 @@ export function AppContextProvider(props) {
         handleOrderStatusShow,
         handleOrderStatusClose,
         viewedOrderNumber,
+        checkOrderVisible,
+        checkOrderNumber,
+        checkOrderPhone,
+        setCheckOrderNumber,
+        setCheckOrderPhone,
+        handleCheckOrder,
+        handleCheckOrderShow,
+        handleCheckOrderClose,
+        checkOrderError,
       }}
     >
       {props.children}
