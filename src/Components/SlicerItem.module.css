@@ -46,7 +46,7 @@
   }
 }
 
-@media screen and (max-width:500px) {
+@media screen and (max-width: 500px) {
   .SlicerItemContainer > img {
     width: 14vw;
     height: 14vw;
@@ -55,3 +55,28 @@
     font-size: 4vw;
   }
 }
+
+/* Lazy Loading */
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: #f38a72;
+  }
+  100% {
+    background-color: #f7b1a1;
+  }
+}
+
+.SlicerItemContainer.loading {
+  animation: skeleton-loading 0.5s linear infinite alternate;
+}
+
+.SlicerItemContainer > * {
+  transition: 0.3s ease-out;
+}
+
+.SlicerItemContainer.loading > * {
+  opacity: 0;
+}
+
+

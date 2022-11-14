@@ -62,7 +62,6 @@
     border-radius: 10px;
   }
 }
- 
 
 .isDrink > .ProductItemLeftInner > img {
   left: -10%;
@@ -70,7 +69,6 @@
   width: auto;
   top: -20%;
 }
-
 
 .isDrink > .ProductItemLeftInner {
   width: 30%;
@@ -113,4 +111,27 @@
     width: auto;
     height: 100%;
   }
+}
+
+/* Lazy Loading */
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: #f38a72;
+  }
+  100% {
+    background-color: #f7b1a1;
+  }
+}
+
+.ProductItemContainer.loading {
+  animation: skeleton-loading 0.5s linear infinite alternate;
+}
+
+.ProductItemContainer > * > * {
+  transition: 0.3s ease-out;
+}
+
+.ProductItemContainer.loading > * > * {
+  opacity: 0;
 }

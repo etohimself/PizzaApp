@@ -7,8 +7,8 @@ function ProductList(props) {
   const { filteredProducts } = useContext(AppContext);
   return (
     <div className={styles.ProductListContainer}>
-      {filteredProducts.map((eachProduct,index) => {
-        return <ProductItem {...eachProduct} key={index}/>;
+      {filteredProducts.map((eachProduct) => {
+        return <ProductItem {...eachProduct} key={eachProduct.id} />;
       })}
       <i aria-hidden="true"></i>
       <i aria-hidden="true"></i>
