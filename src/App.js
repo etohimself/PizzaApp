@@ -10,6 +10,7 @@ import AddToCart from "./Components/AddToCart";
 import CheckOut from "./Components/CheckOut";
 import OrderStatus from "./Components/OrderStatus";
 import CheckOrder from "./Components/CheckOrder";
+import Footer from "./Components/Footer.js";
 
 function App() {
   const {
@@ -30,6 +31,7 @@ function App() {
       {checkoutVisible ? <CheckOut /> : ""}
       {orderStatusVisible ? <OrderStatus /> : ""}
       {checkOrderVisible ? <CheckOrder /> : ""}
+      <Footer />
     </div>
   );
 }
