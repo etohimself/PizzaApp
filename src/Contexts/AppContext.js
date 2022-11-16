@@ -1034,7 +1034,7 @@ export function AppContextProvider(props) {
           eachOrder.orderNumber == checkOrderNumber ||
           eachOrder.recipientPhoneNumber == checkOrderPhone
       )
-      .sort((a, b) => a.orderDateTime - b.orderDateTime)[0];
+      .sort((a, b) => b.orderDateTime - a.orderDateTime)[0];
 
     if (mostRecentOrder) {
       setviewedOrderNumber(mostRecentOrder.orderNumber);
